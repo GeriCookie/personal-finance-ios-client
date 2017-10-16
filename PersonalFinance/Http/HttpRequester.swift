@@ -19,7 +19,7 @@ class HttpRequester {
         guard let url = URL(string: urlString) else {
             print("Error: cannot create URL")
             let error = BackendError.urlError(reason: "Could not construct URL")
-            print(error)
+            delegate?.didPostFailed(with: error)
             return
         }
         
@@ -30,29 +30,36 @@ class HttpRequester {
         request.httpBody = body
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error == nil  else {
-                //Handle error better
-                print(error as Any)
+            guard error == nil else {
+                if let errMsg = error?.localizedDescription {
+                    self.delegate?.didPostFailed(with: BackendError.generalError(reason: errMsg))
+                }
+                
                 return
             }
             
             guard let httpResponse = response as! HTTPURLResponse? else {
-                print("Error in parsing response")
+                let err = BackendError.generalError(reason: "Invalid response")
+                self.delegate?.didPostFailed(with: err)
                 return
             }
             
-            switch(httpResponse.statusCode){
-            case 200...299:
-                print("OK!")
+            switch(httpResponse.statusCode) {
+            case 200...399:
+                guard let responseData = data else {
+                    let error = BackendError.objectSerialization(reason: "No data in response")
+                    self.delegate?.didGetFailed(with: error)
+                    return
+                }
+                self.delegate?.didPostSuccess(with: responseData)
             default:
-                print("ERROR")
+                guard let responseError = data else {
+                    let error = BackendError.objectSerialization(reason: "Error cannot be parsed")
+                    self.delegate?.didPostFailed(with: error)
+                    return
+                }
+                self.delegate?.didPostFailed(with: responseError)
             }
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                var error = BackendError.objectSerialization(reason: "No data in response")
-                return
-            }
-            self.delegate?.didGetSuccess(with: responseData)
         }
         
         dataTask.resume()
@@ -62,4 +69,8 @@ class HttpRequester {
 protocol HttpRequesterDelegate {
     func didGetSuccess(with data: Data)
     func didGetFailed(with error: BackendError)
+    
+    func didPostSuccess(with data: Data)
+    func didPostFailed(with error: BackendError)
+    func didPostFailed(with error: Data)
 }

@@ -11,4 +11,6 @@ import Foundation
 enum BackendError: Error {
     case urlError(reason: String)
     case objectSerialization(reason: String)
+    case generalError(reason: String)
+    case validationError(reason: [String: Any])
 }

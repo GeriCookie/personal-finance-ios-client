@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Codable {
+class UserRegister: Codable{
     var username: String
     var email: String
     var password1: String
@@ -20,7 +20,16 @@ struct User: Codable {
         self.password1 = password
         self.password2 = password
     }
+}
 
+class UserLogin: Codable {
+    var username: String
+    var password: String
+    
+    init(withUsername username: String, andPassword password: String) {
+        self.username = username
+        self.password = password
+    }
 }
 
 

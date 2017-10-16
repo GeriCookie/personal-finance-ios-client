@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AuthToken: Codable {
+struct AuthToken: Codable {
     var key: String?
     
     init(withAuthKey authKey: String) {
