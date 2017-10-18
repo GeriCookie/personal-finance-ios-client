@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cty-Rn-d8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sgN-rF-R75">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -169,10 +169,69 @@
             </objects>
             <point key="canvasLocation" x="657" y="131"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="EHN-mZ-2nG">
+            <objects>
+                <viewController id="oWk-du-c6Y" customClass="ExpensesVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WZZ-hf-0b6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="e53-ih-hII"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="TLP-RT-aY3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nT7-Mi-Eb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2150" y="409"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="NVw-aG-ZA0">
+            <objects>
+                <viewController id="OJx-0Z-Qcx" customClass="BalanceVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4IQ-IV-QOC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-1n-4um">
+                                <rect key="frame" x="125" y="255" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wkl-4d-h9l"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="ppQ-68-nE1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uks-9r-X4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2151" y="-344"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nOT-x1-bTf">
+            <objects>
+                <tabBarController id="sgN-rF-R75" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i7s-LZ-QRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OJx-0Z-Qcx" kind="relationship" relationship="viewControllers" id="cl4-HP-ayp"/>
+                        <segue destination="oWk-du-c6Y" kind="relationship" relationship="viewControllers" id="8JH-db-XpY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4p-fS-VCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="-59"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="z14-Qk-WPh">
             <objects>
-                <viewController id="cty-Rn-d8P" customClass="LoginVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="cty-Rn-d8P" customClass="LoginVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xgj-k7-LS7" customClass="GradientView" customModule="PersonalFinance" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

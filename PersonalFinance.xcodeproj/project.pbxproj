@@ -14,6 +14,8 @@
 		7604441C1F93926E002699AE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604441B1F93926E002699AE /* RoundedButton.swift */; };
 		7604441E1F93B36F002699AE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7604441D1F93B36F002699AE /* LoginVC.swift */; };
 		760444211F94001D002699AE /* ViewController+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760444201F94001D002699AE /* ViewController+Notification.swift */; };
+		760444231F97514D002699AE /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760444221F97514D002699AE /* BalanceVC.swift */; };
+		760444251F97518F002699AE /* ExpensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760444241F97518F002699AE /* ExpensesVC.swift */; };
 		760BDC0F1F856A1F005999F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760BDC0E1F856A1F005999F7 /* AppDelegate.swift */; };
 		760BDC111F856A1F005999F7 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760BDC101F856A1F005999F7 /* RegisterVC.swift */; };
 		760BDC141F856A1F005999F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760BDC121F856A1F005999F7 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		7604441B1F93926E002699AE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7604441D1F93B36F002699AE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		760444201F94001D002699AE /* ViewController+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Notification.swift"; sourceTree = "<group>"; };
+		760444221F97514D002699AE /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
+		760444241F97518F002699AE /* ExpensesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesVC.swift; sourceTree = "<group>"; };
 		760BDC0B1F856A1F005999F7 /* PersonalFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		760BDC0E1F856A1F005999F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		760BDC101F856A1F005999F7 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				7604441F1F93FFFD002699AE /* Extentions */,
 				760BDC101F856A1F005999F7 /* RegisterVC.swift */,
 				7604441D1F93B36F002699AE /* LoginVC.swift */,
+				760444221F97514D002699AE /* BalanceVC.swift */,
+				760444241F97518F002699AE /* ExpensesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 			files = (
 				760BDC171F856A1F005999F7 /* PersonalFinance.xcdatamodeld in Sources */,
 				760444211F94001D002699AE /* ViewController+Notification.swift in Sources */,
+				760444231F97514D002699AE /* BalanceVC.swift in Sources */,
 				76ED66531F924C51009980F1 /* UserService.swift in Sources */,
 				7604441A1F9381BB002699AE /* GradientView.swift in Sources */,
 				7689CB661F927BA700C977BB /* CacheService.swift in Sources */,
@@ -564,6 +571,7 @@
 				76ED66511F923E2C009980F1 /* HttpRequester.swift in Sources */,
 				760BDC0F1F856A1F005999F7 /* AppDelegate.swift in Sources */,
 				7689CB681F927D9F00C977BB /* AuthToken.swift in Sources */,
+				760444251F97518F002699AE /* ExpensesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,12 @@ class CacheService {
     
     var authToken: String {
         get {
-            return userDefaults.value(forKey: TOKEN_KEY) as! String
+            if let token = userDefaults.value(forKey: TOKEN_KEY) {
+                return token as! String
+            }
+            else {
+                return ""
+            }
         }
         set {
             userDefaults.set(newValue, forKey: TOKEN_KEY)

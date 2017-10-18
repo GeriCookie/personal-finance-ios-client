@@ -53,6 +53,7 @@ class LoginVC: UIViewController {
 extension LoginVC: UserServiceDelegate {
     
     func didRegisterSuccess() {
+        self.dismiss(animated: true, completion: nil)
         print("Logged in")
     }
     
