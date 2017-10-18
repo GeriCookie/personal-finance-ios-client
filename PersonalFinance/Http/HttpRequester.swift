@@ -10,6 +10,7 @@ import Foundation
 
 class HttpRequester {
     var delegate : HttpRequesterDelegate?
+    let cacheService = CacheService()
     
     func get(from url: String) {
         
@@ -26,6 +27,10 @@ class HttpRequester {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if cacheService.authToken != "" {
+            print(cacheService.authToken)
+            request.addValue("Token \(cacheService.authToken)", forHTTPHeaderField: "Authorization")
+        }
         
         request.httpBody = body
         
@@ -58,6 +63,7 @@ class HttpRequester {
                     self.delegate?.didPostFailed(with: error)
                     return
                 }
+                print(responseError)
                 self.delegate?.didPostFailed(with: responseError)
             }
         }

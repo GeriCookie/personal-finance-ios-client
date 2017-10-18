@@ -29,6 +29,13 @@
 		7689CB661F927BA700C977BB /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB651F927BA700C977BB /* CacheService.swift */; };
 		7689CB681F927D9F00C977BB /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB671F927D9F00C977BB /* AuthToken.swift */; };
 		7689CB6A1F92AC8600C977BB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB691F92AC8600C977BB /* Errors.swift */; };
+		768C20471F976CF600D4463E /* AddNewBalanceItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20461F976CF600D4463E /* AddNewBalanceItemVC.swift */; };
+		768C20491F977CC400D4463E /* AddIncomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20481F977CC400D4463E /* AddIncomeVC.swift */; };
+		768C204B1F977CF700D4463E /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C204A1F977CF700D4463E /* CategoryVC.swift */; };
+		768C204D1F977DEF00D4463E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C204C1F977DEF00D4463E /* CategoryCell.swift */; };
+		768C204F1F977F2700D4463E /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C204E1F977F2700D4463E /* CategoryService.swift */; };
+		768C20511F977FDF00D4463E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20501F977FDF00D4463E /* Category.swift */; };
+		768C20531F97938900D4463E /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20521F97938900D4463E /* AddCategoryVC.swift */; };
 		76ED66511F923E2C009980F1 /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED66501F923E2C009980F1 /* HttpRequester.swift */; };
 		76ED66531F924C51009980F1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED66521F924C51009980F1 /* UserService.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +88,13 @@
 		7689CB651F927BA700C977BB /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		7689CB671F927D9F00C977BB /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		7689CB691F92AC8600C977BB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		768C20461F976CF600D4463E /* AddNewBalanceItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBalanceItemVC.swift; sourceTree = "<group>"; };
+		768C20481F977CC400D4463E /* AddIncomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeVC.swift; sourceTree = "<group>"; };
+		768C204A1F977CF700D4463E /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		768C204C1F977DEF00D4463E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		768C204E1F977F2700D4463E /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		768C20501F977FDF00D4463E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		768C20521F97938900D4463E /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
 		76ED66501F923E2C009980F1 /* HttpRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequester.swift; sourceTree = "<group>"; };
 		76ED66521F924C51009980F1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7BA4EC60B508BBA648A6AE29 /* Pods-PersonalFinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalFinanceTests/Pods-PersonalFinanceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +234,7 @@
 			children = (
 				7689CB611F926F0A00C977BB /* User.swift */,
 				7689CB671F927D9F00C977BB /* AuthToken.swift */,
+				768C20501F977FDF00D4463E /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +244,7 @@
 			children = (
 				760444191F9381BB002699AE /* GradientView.swift */,
 				7604441B1F93926E002699AE /* RoundedButton.swift */,
+				768C204C1F977DEF00D4463E /* CategoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +257,10 @@
 				7604441D1F93B36F002699AE /* LoginVC.swift */,
 				760444221F97514D002699AE /* BalanceVC.swift */,
 				760444241F97518F002699AE /* ExpensesVC.swift */,
+				768C20461F976CF600D4463E /* AddNewBalanceItemVC.swift */,
+				768C20481F977CC400D4463E /* AddIncomeVC.swift */,
+				768C204A1F977CF700D4463E /* CategoryVC.swift */,
+				768C20521F97938900D4463E /* AddCategoryVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +270,7 @@
 			children = (
 				76ED66521F924C51009980F1 /* UserService.swift */,
 				7689CB651F927BA700C977BB /* CacheService.swift */,
+				768C204E1F977F2700D4463E /* CategoryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -559,7 +580,9 @@
 				760BDC171F856A1F005999F7 /* PersonalFinance.xcdatamodeld in Sources */,
 				760444211F94001D002699AE /* ViewController+Notification.swift in Sources */,
 				760444231F97514D002699AE /* BalanceVC.swift in Sources */,
+				768C204F1F977F2700D4463E /* CategoryService.swift in Sources */,
 				76ED66531F924C51009980F1 /* UserService.swift in Sources */,
+				768C204B1F977CF700D4463E /* CategoryVC.swift in Sources */,
 				7604441A1F9381BB002699AE /* GradientView.swift in Sources */,
 				7689CB661F927BA700C977BB /* CacheService.swift in Sources */,
 				7689CB621F926F0A00C977BB /* User.swift in Sources */,
@@ -572,6 +595,11 @@
 				760BDC0F1F856A1F005999F7 /* AppDelegate.swift in Sources */,
 				7689CB681F927D9F00C977BB /* AuthToken.swift in Sources */,
 				760444251F97518F002699AE /* ExpensesVC.swift in Sources */,
+				768C20471F976CF600D4463E /* AddNewBalanceItemVC.swift in Sources */,
+				768C20491F977CC400D4463E /* AddIncomeVC.swift in Sources */,
+				768C20531F97938900D4463E /* AddCategoryVC.swift in Sources */,
+				768C204D1F977DEF00D4463E /* CategoryCell.swift in Sources */,
+				768C20511F977FDF00D4463E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
