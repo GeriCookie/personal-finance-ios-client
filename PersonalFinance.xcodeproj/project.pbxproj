@@ -24,6 +24,7 @@
 		760BDC1C1F856A1F005999F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760BDC1A1F856A1F005999F7 /* LaunchScreen.storyboard */; };
 		760BDC271F856A1F005999F7 /* PersonalFinanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760BDC261F856A1F005999F7 /* PersonalFinanceTests.swift */; };
 		760BDC321F856A1F005999F7 /* PersonalFinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760BDC311F856A1F005999F7 /* PersonalFinanceUITests.swift */; };
+		762991011F98F24D00E005CD /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762991001F98F24D00E005CD /* Income.swift */; };
 		7689CB621F926F0A00C977BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB611F926F0A00C977BB /* User.swift */; };
 		7689CB641F92707300C977BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB631F92707300C977BB /* Constants.swift */; };
 		7689CB661F927BA700C977BB /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB651F927BA700C977BB /* CacheService.swift */; };
@@ -83,6 +84,7 @@
 		760BDC2D1F856A1F005999F7 /* PersonalFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		760BDC311F856A1F005999F7 /* PersonalFinanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalFinanceUITests.swift; sourceTree = "<group>"; };
 		760BDC331F856A1F005999F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		762991001F98F24D00E005CD /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		7689CB611F926F0A00C977BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7689CB631F92707300C977BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7689CB651F927BA700C977BB /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				7689CB611F926F0A00C977BB /* User.swift */,
 				7689CB671F927D9F00C977BB /* AuthToken.swift */,
 				768C20501F977FDF00D4463E /* Category.swift */,
+				762991001F98F24D00E005CD /* Income.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				7689CB661F927BA700C977BB /* CacheService.swift in Sources */,
 				7689CB621F926F0A00C977BB /* User.swift in Sources */,
 				760BDC111F856A1F005999F7 /* RegisterVC.swift in Sources */,
+				762991011F98F24D00E005CD /* Income.swift in Sources */,
 				7689CB641F92707300C977BB /* Constants.swift in Sources */,
 				7604441C1F93926E002699AE /* RoundedButton.swift in Sources */,
 				7689CB6A1F92AC8600C977BB /* Errors.swift in Sources */,

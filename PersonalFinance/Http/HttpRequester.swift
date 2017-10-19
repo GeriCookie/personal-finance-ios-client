@@ -8,36 +8,47 @@
 
 import Foundation
 
+enum HttpMethod: String {
+    case post = "POST"
+    case get = "GET"
+}
+
 class HttpRequester {
     var delegate : HttpRequesterDelegate?
     let cacheService = CacheService()
     
     func get(from url: String) {
-        
+        makeRequest(to: url, with: .get, andBody: nil)
+    }
+    func post(to url: String, with body: Data) {
+        makeRequest(to: url, with: .post, andBody: body)
     }
     
-    func post(to urlString: String, with body: Data) {
+    func makeRequest(to urlString: String, with httpMethod: HttpMethod, andBody body: Data? ) {
         guard let url = URL(string: urlString) else {
             print("Error: cannot create URL")
             let error = BackendError.urlError(reason: "Could not construct URL")
-            delegate?.didPostFailed(with: error)
+            handleError(forHttpMethod: httpMethod, with: error)
             return
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = httpMethod.rawValue
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if cacheService.authToken != "" {
             print(cacheService.authToken)
             request.addValue("Token \(cacheService.authToken)", forHTTPHeaderField: "Authorization")
         }
         
-        request.httpBody = body
+        if let body = body {
+            request.httpBody = body
+        }
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
                 if let errMsg = error?.localizedDescription {
-                    self.delegate?.didPostFailed(with: BackendError.generalError(reason: errMsg))
+                    self.handleError(forHttpMethod: httpMethod, with: BackendError.generalError(reason: errMsg))
                 }
                 
                 return
@@ -45,7 +56,7 @@ class HttpRequester {
             
             guard let httpResponse = response as! HTTPURLResponse? else {
                 let err = BackendError.generalError(reason: "Invalid response")
-                self.delegate?.didPostFailed(with: err)
+                self.handleError(forHttpMethod: httpMethod, with: err)
                 return
             }
             
@@ -53,22 +64,40 @@ class HttpRequester {
             case 200...399:
                 guard let responseData = data else {
                     let error = BackendError.objectSerialization(reason: "No data in response")
-                    self.delegate?.didGetFailed(with: error)
+                    self.handleError(forHttpMethod: httpMethod, with: error)
                     return
                 }
-                self.delegate?.didPostSuccess(with: responseData)
+                self.handleSuccess(forHttpMethod: httpMethod, with: responseData)
             default:
                 guard let responseError = data else {
                     let error = BackendError.objectSerialization(reason: "Error cannot be parsed")
-                    self.delegate?.didPostFailed(with: error)
+                    self.handleError(forHttpMethod: httpMethod, with: error)
                     return
                 }
                 print(responseError)
-                self.delegate?.didPostFailed(with: responseError)
+                self.handleError(forHttpMethod: httpMethod, with: BackendError.generalError(reason: (error?.localizedDescription)!))
             }
         }
         
         dataTask.resume()
+    }
+    
+    func handleError(forHttpMethod httpMethod: HttpMethod, with error: BackendError) {
+        switch httpMethod {
+        case .get:
+            delegate?.didGetFailed(with: error)
+        case .post:
+            delegate?.didPostFailed(with: error)
+        }
+    }
+    
+    func handleSuccess(forHttpMethod httpMethod: HttpMethod, with data: Data) {
+        switch httpMethod {
+        case .get:
+            delegate?.didGetSuccess(with: data)
+        case .post:
+            delegate?.didPostSuccess(with: data)
+        }
     }
 }
 

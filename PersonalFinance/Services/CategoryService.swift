@@ -32,15 +32,34 @@ class CategoryService {
         
         httpRequester?.post(to: CATEGORY_URL, with: body)
     }
+    
+    func loadCategories() {
+        httpRequester?.get(from: CATEGORY_URL)
+    }
 }
 
 protocol CategoryServiceDelegate {
-    func didGetCategoriesSuccess(with: [Category])
+    func didGetCategoriesSuccess(with categories: [Category])
     func didPostCategoriesSuccess()
+}
+
+extension CategoryServiceDelegate {
+    func didGetCategoriesSuccess(with categories: [Category]){}
+    func didPostCategoriesSuccess(){}
+    
 }
 
 extension CategoryService: HttpRequesterDelegate {
     func didGetSuccess(with data: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let categories = try decoder.decode([Category].self, from: data)
+            delegate?.didGetCategoriesSuccess(with: categories)
+        } catch {
+            print("error trying to convert data to JSON")
+            print(error)
+            // Handle error
+        }
     }
     
     func didGetFailed(with error: BackendError) {

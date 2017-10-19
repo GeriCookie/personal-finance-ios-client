@@ -40,10 +40,6 @@ class AddCategoryVC: UIViewController {
 }
 
 extension AddCategoryVC : CategoryServiceDelegate {
-    func didGetCategoriesSuccess(with: [Category]) {
-
-    }
-    
     func didPostCategoriesSuccess() {
         print("Category posted")
         self.dismiss(animated: true, completion: nil)
