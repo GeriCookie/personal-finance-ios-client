@@ -20,16 +20,18 @@ class AddNewBalanceItemVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "add expense" || segue.identifier == "add income" {
+            guard let nextVC = segue.destination as? AddIncomeOrExpenseVC else {
+                return
+            }
+            
+            nextVC.type = segue.identifier == "add expense"
+                ? .expense
+                : .income
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }

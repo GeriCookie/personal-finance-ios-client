@@ -31,12 +31,17 @@
 		7689CB681F927D9F00C977BB /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB671F927D9F00C977BB /* AuthToken.swift */; };
 		7689CB6A1F92AC8600C977BB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689CB691F92AC8600C977BB /* Errors.swift */; };
 		768C20471F976CF600D4463E /* AddNewBalanceItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20461F976CF600D4463E /* AddNewBalanceItemVC.swift */; };
-		768C20491F977CC400D4463E /* AddIncomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20481F977CC400D4463E /* AddIncomeVC.swift */; };
+		768C20491F977CC400D4463E /* AddIncomeOrExpenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20481F977CC400D4463E /* AddIncomeOrExpenseVC.swift */; };
 		768C204B1F977CF700D4463E /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C204A1F977CF700D4463E /* CategoryVC.swift */; };
 		768C204D1F977DEF00D4463E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C204C1F977DEF00D4463E /* CategoryCell.swift */; };
 		768C204F1F977F2700D4463E /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C204E1F977F2700D4463E /* CategoryService.swift */; };
 		768C20511F977FDF00D4463E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20501F977FDF00D4463E /* Category.swift */; };
 		768C20531F97938900D4463E /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C20521F97938900D4463E /* AddCategoryVC.swift */; };
+		76A0396E1F9B621800AC21E3 /* IncomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0396D1F9B621800AC21E3 /* IncomeService.swift */; };
+		76A039741F9B6E9400AC21E3 /* ExpenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A039731F9B6E9400AC21E3 /* ExpenseService.swift */; };
+		76A039761F9B6FDC00AC21E3 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A039751F9B6FDC00AC21E3 /* Expense.swift */; };
+		76A0397A1F9B7D8200AC21E3 /* IncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A039791F9B7D8200AC21E3 /* IncomeCell.swift */; };
+		76BF84DE1F9BB98700052013 /* IncomesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF84DD1F9BB98600052013 /* IncomesVC.swift */; };
 		76ED66511F923E2C009980F1 /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED66501F923E2C009980F1 /* HttpRequester.swift */; };
 		76ED66531F924C51009980F1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED66521F924C51009980F1 /* UserService.swift */; };
 /* End PBXBuildFile section */
@@ -91,12 +96,18 @@
 		7689CB671F927D9F00C977BB /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		7689CB691F92AC8600C977BB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		768C20461F976CF600D4463E /* AddNewBalanceItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBalanceItemVC.swift; sourceTree = "<group>"; };
-		768C20481F977CC400D4463E /* AddIncomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeVC.swift; sourceTree = "<group>"; };
+		768C20481F977CC400D4463E /* AddIncomeOrExpenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeOrExpenseVC.swift; sourceTree = "<group>"; };
 		768C204A1F977CF700D4463E /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		768C204C1F977DEF00D4463E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		768C204E1F977F2700D4463E /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		768C20501F977FDF00D4463E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		768C20521F97938900D4463E /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
+		76A0396D1F9B621800AC21E3 /* IncomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeService.swift; sourceTree = "<group>"; };
+		76A039731F9B6E9400AC21E3 /* ExpenseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseService.swift; sourceTree = "<group>"; };
+		76A039751F9B6FDC00AC21E3 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		76A039771F9B77A000AC21E3 /* IncomesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesVC.swift; sourceTree = "<group>"; };
+		76A039791F9B7D8200AC21E3 /* IncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCell.swift; sourceTree = "<group>"; };
+		76BF84DD1F9BB98600052013 /* IncomesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomesVC.swift; sourceTree = "<group>"; };
 		76ED66501F923E2C009980F1 /* HttpRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequester.swift; sourceTree = "<group>"; };
 		76ED66521F924C51009980F1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7BA4EC60B508BBA648A6AE29 /* Pods-PersonalFinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalFinanceTests/Pods-PersonalFinanceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +249,7 @@
 				7689CB671F927D9F00C977BB /* AuthToken.swift */,
 				768C20501F977FDF00D4463E /* Category.swift */,
 				762991001F98F24D00E005CD /* Income.swift */,
+				76A039751F9B6FDC00AC21E3 /* Expense.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +260,7 @@
 				760444191F9381BB002699AE /* GradientView.swift */,
 				7604441B1F93926E002699AE /* RoundedButton.swift */,
 				768C204C1F977DEF00D4463E /* CategoryCell.swift */,
+				76A039791F9B7D8200AC21E3 /* IncomeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,15 +268,17 @@
 		76ED664D1F923DFB009980F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76BF84DD1F9BB98600052013 /* IncomesVC.swift */,
 				7604441F1F93FFFD002699AE /* Extentions */,
 				760BDC101F856A1F005999F7 /* RegisterVC.swift */,
 				7604441D1F93B36F002699AE /* LoginVC.swift */,
 				760444221F97514D002699AE /* BalanceVC.swift */,
 				760444241F97518F002699AE /* ExpensesVC.swift */,
 				768C20461F976CF600D4463E /* AddNewBalanceItemVC.swift */,
-				768C20481F977CC400D4463E /* AddIncomeVC.swift */,
+				768C20481F977CC400D4463E /* AddIncomeOrExpenseVC.swift */,
 				768C204A1F977CF700D4463E /* CategoryVC.swift */,
 				768C20521F97938900D4463E /* AddCategoryVC.swift */,
+				76A039771F9B77A000AC21E3 /* IncomesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +289,8 @@
 				76ED66521F924C51009980F1 /* UserService.swift */,
 				7689CB651F927BA700C977BB /* CacheService.swift */,
 				768C204E1F977F2700D4463E /* CategoryService.swift */,
+				76A0396D1F9B621800AC21E3 /* IncomeService.swift */,
+				76A039731F9B6E9400AC21E3 /* ExpenseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -580,11 +597,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A039741F9B6E9400AC21E3 /* ExpenseService.swift in Sources */,
 				760BDC171F856A1F005999F7 /* PersonalFinance.xcdatamodeld in Sources */,
 				760444211F94001D002699AE /* ViewController+Notification.swift in Sources */,
 				760444231F97514D002699AE /* BalanceVC.swift in Sources */,
 				768C204F1F977F2700D4463E /* CategoryService.swift in Sources */,
+				76BF84DE1F9BB98700052013 /* IncomesVC.swift in Sources */,
+				76A0397A1F9B7D8200AC21E3 /* IncomeCell.swift in Sources */,
 				76ED66531F924C51009980F1 /* UserService.swift in Sources */,
+				76A0396E1F9B621800AC21E3 /* IncomeService.swift in Sources */,
 				768C204B1F977CF700D4463E /* CategoryVC.swift in Sources */,
 				7604441A1F9381BB002699AE /* GradientView.swift in Sources */,
 				7689CB661F927BA700C977BB /* CacheService.swift in Sources */,
@@ -600,8 +621,9 @@
 				7689CB681F927D9F00C977BB /* AuthToken.swift in Sources */,
 				760444251F97518F002699AE /* ExpensesVC.swift in Sources */,
 				768C20471F976CF600D4463E /* AddNewBalanceItemVC.swift in Sources */,
-				768C20491F977CC400D4463E /* AddIncomeVC.swift in Sources */,
+				768C20491F977CC400D4463E /* AddIncomeOrExpenseVC.swift in Sources */,
 				768C20531F97938900D4463E /* AddCategoryVC.swift in Sources */,
+				76A039761F9B6FDC00AC21E3 /* Expense.swift in Sources */,
 				768C204D1F977DEF00D4463E /* CategoryCell.swift in Sources */,
 				768C20511F977FDF00D4463E /* Category.swift in Sources */,
 			);
@@ -770,12 +792,14 @@
 			baseConfigurationReference = C594E01AADBCFC2621C2263C /* Pods-PersonalFinance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB3227H635;
 				INFOPLIST_FILE = PersonalFinance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GC.PersonalFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -786,12 +810,14 @@
 			baseConfigurationReference = 7EAB8BA1CBC43D35895FE7E1 /* Pods-PersonalFinance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB3227H635;
 				INFOPLIST_FILE = PersonalFinance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GC.PersonalFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

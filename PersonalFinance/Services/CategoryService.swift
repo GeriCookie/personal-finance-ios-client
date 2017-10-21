@@ -11,13 +11,10 @@ import Foundation
 class CategoryService {
     var delegate: CategoryServiceDelegate?
     var httpRequester: HttpRequester?
-    var cacheService: CacheService?
     
     init() {
         httpRequester = HttpRequester()
         httpRequester?.delegate = self
-        
-        cacheService = CacheService()
     }
     
     func addCategory(with name: String, color: String) {

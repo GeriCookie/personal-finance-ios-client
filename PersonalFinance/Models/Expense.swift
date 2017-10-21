@@ -1,15 +1,14 @@
 //
-//  Income.swift
+//  Expense.swift
 //  PersonalFinance
 //
-//  Created by Cookie on 19.10.17.
+//  Created by Cookie on 21.10.17.
 //  Copyright © 2017 Cookie. All rights reserved.
 //
 
 import Foundation
 
-class Income: Codable {
-    var id: Int?
+class Expense: Codable {
     var category: Category
     var amount: String
     var date: String

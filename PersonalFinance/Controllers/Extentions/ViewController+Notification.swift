@@ -11,6 +11,15 @@ import UIKit
 extension UIViewController {
     func showError(withMessage message: String) {
         let alert = UIAlertController(title: "Oppps. Something happend", message: message, preferredStyle: .alert)
-        show(alert, sender: self)
+        DispatchQueue.main.async {
+            self.show(alert, sender: self)
+        }
+    }
+    
+    func showSuccess(with message: String) {
+        let alert = UIAlertController(title: "Yuhuuuu", message: message, preferredStyle: .alert)
+        DispatchQueue.main.async {
+            self.show(alert, sender: self)
+        }
     }
 }
