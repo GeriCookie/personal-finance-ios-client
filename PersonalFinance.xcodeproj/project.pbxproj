@@ -16,6 +16,7 @@
 		760444211F94001D002699AE /* ViewController+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760444201F94001D002699AE /* ViewController+Notification.swift */; };
 		760444231F97514D002699AE /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760444221F97514D002699AE /* BalanceVC.swift */; };
 		760444251F97518F002699AE /* ExpensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760444241F97518F002699AE /* ExpensesVC.swift */; };
+		760843D31F9E8CF10086A1DE /* Date+Weeks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760843D21F9E8CF10086A1DE /* Date+Weeks.swift */; };
 		760BDC0F1F856A1F005999F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760BDC0E1F856A1F005999F7 /* AppDelegate.swift */; };
 		760BDC111F856A1F005999F7 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760BDC101F856A1F005999F7 /* RegisterVC.swift */; };
 		760BDC141F856A1F005999F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760BDC121F856A1F005999F7 /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		760444201F94001D002699AE /* ViewController+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Notification.swift"; sourceTree = "<group>"; };
 		760444221F97514D002699AE /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
 		760444241F97518F002699AE /* ExpensesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesVC.swift; sourceTree = "<group>"; };
+		760843D21F9E8CF10086A1DE /* Date+Weeks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Weeks.swift"; sourceTree = "<group>"; };
 		760BDC0B1F856A1F005999F7 /* PersonalFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		760BDC0E1F856A1F005999F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		760BDC101F856A1F005999F7 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				7689CB631F92707300C977BB /* Constants.swift */,
 				7689CB691F92AC8600C977BB /* Errors.swift */,
+				760843D21F9E8CF10086A1DE /* Date+Weeks.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				760444251F97518F002699AE /* ExpensesVC.swift in Sources */,
 				768C20471F976CF600D4463E /* AddNewBalanceItemVC.swift in Sources */,
 				768C20491F977CC400D4463E /* AddIncomeOrExpenseVC.swift in Sources */,
+				760843D31F9E8CF10086A1DE /* Date+Weeks.swift in Sources */,
 				768C20531F97938900D4463E /* AddCategoryVC.swift in Sources */,
 				76A039761F9B6FDC00AC21E3 /* Expense.swift in Sources */,
 				768C204D1F977DEF00D4463E /* CategoryCell.swift in Sources */,

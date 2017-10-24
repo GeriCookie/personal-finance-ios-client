@@ -36,12 +36,25 @@ class AddIncomeOrExpenseVC: UIViewController {
         expenseService?.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        datePicker.setDate(<#T##date: Date##Date#>, animated: <#T##Bool#>)
+    }
+    
     @IBAction func onAddClicked(_ sender: UIButton) {
         //Check if amount is double
         guard let amount = amountField.text, amountField.text != "" else {
             return
         }
         
+        print("Date: \(date)")
+        if date == nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let strDate = dateFormatter.string(from: datePicker.date)
+            date = strDate
+        }
         
         if let date = date, let category = category {
             if type == .expense {
@@ -53,9 +66,9 @@ class AddIncomeOrExpenseVC: UIViewController {
     }
     
     @IBAction func datePickerAction(_ sender: Any) {
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var strDate = dateFormatter.string(from: datePicker.date)
+        let strDate = dateFormatter.string(from: datePicker.date)
         date = strDate
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,11 +97,12 @@ extension AddIncomeOrExpenseVC: IncomeServiceDelegate {
         showSuccess(with: msg)
         
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let nextVC = storyboard.instantiateViewController(withIdentifier: "IncomesSavingsBudgetVC")
-            self.dismiss(animated: true, completion: {
-                self.show(nextVC, sender: nil)
-            })
+            //let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            //let nextVC = storyboard.instantiateViewController(withIdentifier: "IncomesSavingsBudgetVC")
+            //self.dismiss(animated: true, completion: {
+              //  self.show(nextVC, sender: nil)
+            //})
+            self.performSegue(withIdentifier: UNWIND, sender: nil)
         }
     }
     

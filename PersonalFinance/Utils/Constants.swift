@@ -23,3 +23,5 @@ let USERNAME_KEY = "username"
 
 
 let INCOME_CELL_IDENTIFIER = "IncomeCell"
+
+let UNWIND = "toIncomes"

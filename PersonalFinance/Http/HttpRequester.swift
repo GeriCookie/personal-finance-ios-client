@@ -74,7 +74,7 @@ class HttpRequester {
                     self.handleError(forHttpMethod: httpMethod, with: error)
                     return
                 }
-                print(responseError)
+                print("Response error: \(responseError)")
                 self.handleError(forHttpMethod: httpMethod, with: BackendError.generalError(reason: (error?.localizedDescription)!))
             }
         }

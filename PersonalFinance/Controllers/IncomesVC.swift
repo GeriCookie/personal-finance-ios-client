@@ -11,12 +11,11 @@ import UIKit
 class IncomesVC: UIViewController {
     
     var incomesService: IncomeService?
-//    var budgetService: BudgetService?
-//    var savingsService: SavingsService?
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     @IBOutlet weak var tableView: UITableView!
     var incomes = [Income]()
-    //var budgets: [Budget]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
