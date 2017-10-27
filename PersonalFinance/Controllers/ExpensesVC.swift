@@ -22,8 +22,8 @@ class ExpensesVC: UIViewController {
     
     var service: ExpenseService?
     
-    var expenses = [Expense]()
-    var currentDate: Date?
+    var expenses = [ExpenseByDate]()
+    var currentDate = Date.now
     var currentDateIntervalType: DateIntervalType = .day
     
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class ExpensesVC: UIViewController {
         service = ExpenseService()
         service?.delegate = self
         
-        service?.getExpenses()
+        service?.getExpensesByDate(from: currentDate, to: currentDate)
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,17 +66,17 @@ class ExpensesVC: UIViewController {
     }
     
     func getDayText() -> String {
-        guard let date = currentDate else {
-            return ""
-        }
+//        guard let date = currentDate else {
+//            return ""
+//        }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var text = dateFormatter.string(from: currentDate!)
+        var text = dateFormatter.string(from: currentDate)
         
-        if date == Date.now {
+        if currentDate.sameDay(as: Date.now) {
             text = "Today"
-        } else if date == Date.now.prevDay {
+        } else if currentDate.sameDay(as: Date.now.prevDay) {
             text = "Yesterday"
         }
         
@@ -84,16 +84,19 @@ class ExpensesVC: UIViewController {
     }
     
     func getWeekText() -> String {
-        guard let date = currentDate else {
-            return ""
-        }
+//        guard let date = currentDate else {
+//            return ""
+//        }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM"
         
-        var text = "\(dateFormatter.string(from: date.startOfWeek)) - \(dateFormatter.string(from: date.endOfWeek))"
+        print(currentDate.startOfWeek)
+        print(dateFormatter.string(from: (currentDate.startOfWeek)))
         
-        if Date.now.startOfWeek <= date {
+        var text = "\(dateFormatter.string(from: currentDate.startOfWeek)) - \(dateFormatter.string(from: currentDate.endOfWeek))"
+        
+        if currentDate.sameWeek(as: Date.now) {
             text = "This week"
         }
         
@@ -101,16 +104,16 @@ class ExpensesVC: UIViewController {
     }
     
     func getMonthText() -> String {
-        guard let date = currentDate else {
-            return ""
-        }
+//        guard let date = currentDate else {
+//            return ""
+//        }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
         
-        var text = dateFormatter.string(from: date.startOfMonth)
+        var text = dateFormatter.string(from: currentDate.startOfMonth)
         
-        if Date.now.startOfMonth <= date {
+        if currentDate.sameMonth(as: Date.now) {
             text = "This month"
         }
         
@@ -118,16 +121,17 @@ class ExpensesVC: UIViewController {
     }
     
     func getYearText() -> String {
-        guard let date = currentDate else {
-            return ""
-        }
+//        guard let date = currentDate else {
+//            return ""
+//        }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YY"
+        dateFormatter.dateFormat = "YYYY"
         
-        var text = dateFormatter.string(from: date.startOfMonth)
-        
-        if Date.now.startOfMonth <= date {
+        var text = dateFormatter.string(from: currentDate.startOfYear)
+        print(Date.now.startOfYear)
+        print(Date.now)
+        if Date.now.startOfYear <= currentDate {
             text = "This year"
         }
         
@@ -135,14 +139,14 @@ class ExpensesVC: UIViewController {
     }
     
     func updateDate(byAdding value: Int) {
-        guard let date = currentDate else {
-            return
-        }
+//        guard let date = currentDate else {
+//            return
+//        }
         
         var components = DateComponents()
         switch(currentDateIntervalType) {
         case .day:
-            currentDate = date.nextDay
+            components.day = value
         case .week:
             components.weekOfMonth = value
         case .month:
@@ -151,20 +155,24 @@ class ExpensesVC: UIViewController {
             components.year = value
         }
         
-        currentDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: date)
+        currentDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: currentDate)!
         load()
     }
     
     func load() {
-        updateUI()
+        
         // TODO:
-        //        switch currentDateIntervalType {
-        //        case .day:
-        //            service?.getExpenses(for: currentDate)
-        //        case .week:
-        //            service?.getExpenses(from: currentDate?.startOfMonth, to: currentDate?.endOfWeek)
-        //        }
-        //        service?.getExpenses()
+        switch currentDateIntervalType {
+        case .day:
+            service?.getExpensesByDate(from: currentDate, to: currentDate)
+        case .week:
+            service?.getExpensesByDate(from: (currentDate.startOfWeek), to: (currentDate.endOfWeek))
+        case .month:
+            service?.getExpensesByDate(from: (currentDate.startOfMonth), to: (currentDate.endOfMonth))
+        case .year:
+            service?.getExpensesByDate(from: (currentDate.startOfYear), to: (currentDate.endOfYear))
+        }
+        updateUI()
     }
     
     @IBAction func onPrevDateClick(_ sender: Any) {
@@ -193,9 +201,9 @@ extension ExpensesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: INCOME_CELL_IDENTIFIER, for: indexPath)
         if let cell = cell as? IncomeCell {
-            cell.date.text = expenses[indexPath.row].date
-            cell.categoryName.text = expenses[indexPath.row].category.name
-            cell.amount.text = "\(expenses[indexPath.row].amount)"
+            cell.date.text = expenses[indexPath.row].categoryName
+            cell.categoryName.text = expenses[indexPath.row].categoryColor
+            cell.amount.text = "\(expenses[indexPath.row].amountPerCategory)"
             return cell
         }
         
@@ -204,8 +212,10 @@ extension ExpensesVC: UITableViewDataSource {
 }
 
 extension ExpensesVC: ExpenseServiceDelegate {
-    func didGetExpensesSuccess(with expenses: [Expense]) {
-        self.expenses = expenses
+    func didGetExpensesByDateSuccess(with expensesByDate: [ExpenseByDate]) {
+        print(expensesByDate)
+        self.expenses = expensesByDate
         updateUI()
     }
 }
+

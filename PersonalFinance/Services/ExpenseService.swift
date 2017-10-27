@@ -43,29 +43,44 @@ class ExpenseService {
     func getExpenses() {
         httpRequester?.get(from: EXPENSES_URL)
     }
+    
+    func getExpensesByDate(from startDate: Date, to endDate: Date) {
+        let url = "\(EXPENSES_BY_DATE_URL)/?date_0=\(format(date: startDate))&date_1=\(format(date: endDate))"
+        print(url)
+        httpRequester?.get(from: url)
+    }
+    
+    func format(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
 }
 
 protocol ExpenseServiceDelegate {
     func didPostExpenseSuccess()
-    func didGetExpensesSuccess(with expenses: [Expense])
+    func didGetExpensesByDateSuccess(with expensesByDate: [ExpenseByDate])
     func didGetExpensesFailed(with error: BackendError)
 }
 
 extension ExpenseServiceDelegate {
     func didPostExpenseSuccess() {}
-    func didGetExpensesSuccess(with expenses: [Expense]) {}
+    func didGetExpensesByDateSuccess(with expensesByDate: [ExpenseByDate]) {}
     func didGetExpensesFailed(with error: BackendError) {}
 }
 
 extension ExpenseService: HttpRequesterDelegate {
     func didGetSuccess(with data: Data) {
         let decoder = JSONDecoder()
-        guard let result = try? decoder.decode([Expense].self, from: data) else {
+        if let response = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+            print(response)
+        }
+        guard let result = try? decoder.decode([ExpenseByDate].self, from: data) else {
             delegate?.didGetExpensesFailed(with: BackendError.generalError(reason: "Cannot decode"))
             return
         }
         
-        delegate?.didGetExpensesSuccess(with: result)
+        delegate?.didGetExpensesByDateSuccess(with: result)
     }
     
     func didGetFailed(with error: BackendError) {

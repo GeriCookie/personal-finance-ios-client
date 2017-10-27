@@ -13,9 +13,22 @@ class Expense: Codable {
     var amount: String
     var date: String
     
-    init(with category: Category, amount: String, date: String){
+    init(with category: Category, amount: String, date: String) {
         self.category = category
         self.amount = amount
         self.date = date
+    }
+}
+
+struct ExpenseByDate: Codable {
+    let amountPerCategory: Double
+    let categoryName: String
+    let categoryColor: String
+    
+    enum CodingKeys: String, CodingKey {
+        case amountPerCategory = "amount_per_category"
+        case categoryName = "category__name"
+        case categoryColor = "category__color"
+        
     }
 }

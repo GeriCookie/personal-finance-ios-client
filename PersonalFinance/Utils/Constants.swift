@@ -16,6 +16,7 @@ let LOGIN_URL = "\(BASE_URL)/accounts/rest-auth/login/"
 let CATEGORY_URL = "\(BASE_URL)/api/categories/"
 let INCOMES_URL = "\(BASE_URL)/api/incomes/"
 let EXPENSES_URL = "\(BASE_URL)/api/expenses/"
+let EXPENSES_BY_DATE_URL = "\(BASE_URL)/api/expenses-by-date"
 
 //User defaults
 let TOKEN_KEY = "token"
