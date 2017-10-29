@@ -6,6 +6,7 @@ target 'PersonalFinance' do
   use_frameworks!
 
   # Pods for PersonalFinance
+  pod 'Charts'
 
   target 'PersonalFinanceTests' do
     inherit! :search_paths

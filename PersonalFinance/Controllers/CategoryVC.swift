@@ -9,7 +9,6 @@
 import UIKit
 
 class CategoryVC: UIViewController {
-    let REUSE_CELL_IDENTIFIER = "category-cell"
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,11 +22,14 @@ class CategoryVC: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CategoryCell.self, forCellReuseIdentifier: REUSE_CELL_IDENTIFIER)
         
         service = CategoryService()
         service?.delegate = self
         
+        service?.loadCategories()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         service?.loadCategories()
     }
 
@@ -56,10 +58,12 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: REUSE_CELL_IDENTIFIER)
-        cell?.textLabel?.text = categories[indexPath.row].name
-        
-        return cell!
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryCell {
+            cell.categoryName.text = categories[indexPath.row].name
+            cell.categoryColor.backgroundColor = UIColor.returnUIColor(components: categories[indexPath.row].color)
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -45,6 +45,9 @@
 		76BF84DE1F9BB98700052013 /* IncomesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BF84DD1F9BB98600052013 /* IncomesVC.swift */; };
 		76ED66511F923E2C009980F1 /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED66501F923E2C009980F1 /* HttpRequester.swift */; };
 		76ED66531F924C51009980F1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED66521F924C51009980F1 /* UserService.swift */; };
+		76F3850A1FA62E2B00C487E5 /* ChooseColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F385091FA62E2B00C487E5 /* ChooseColorVC.swift */; };
+		76F3850C1FA62F5B00C487E5 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3850B1FA62F5B00C487E5 /* ColorCell.swift */; };
+		76F3850E1FA669D600C487E5 /* UIColor+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3850D1FA669D600C487E5 /* UIColor+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		76BF84DD1F9BB98600052013 /* IncomesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomesVC.swift; sourceTree = "<group>"; };
 		76ED66501F923E2C009980F1 /* HttpRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequester.swift; sourceTree = "<group>"; };
 		76ED66521F924C51009980F1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		76F385091FA62E2B00C487E5 /* ChooseColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorVC.swift; sourceTree = "<group>"; };
+		76F3850B1FA62F5B00C487E5 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		76F3850D1FA669D600C487E5 /* UIColor+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+String.swift"; sourceTree = "<group>"; };
 		7BA4EC60B508BBA648A6AE29 /* Pods-PersonalFinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalFinanceTests/Pods-PersonalFinanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		7EAB8BA1CBC43D35895FE7E1 /* Pods-PersonalFinance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinance.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalFinance/Pods-PersonalFinance.release.xcconfig"; sourceTree = "<group>"; };
 		C594E01AADBCFC2621C2263C /* Pods-PersonalFinance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalFinance/Pods-PersonalFinance.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +269,7 @@
 				7604441B1F93926E002699AE /* RoundedButton.swift */,
 				768C204C1F977DEF00D4463E /* CategoryCell.swift */,
 				76A039791F9B7D8200AC21E3 /* IncomeCell.swift */,
+				76F3850B1FA62F5B00C487E5 /* ColorCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +288,7 @@
 				768C204A1F977CF700D4463E /* CategoryVC.swift */,
 				768C20521F97938900D4463E /* AddCategoryVC.swift */,
 				76A039771F9B77A000AC21E3 /* IncomesVC.swift */,
+				76F385091FA62E2B00C487E5 /* ChooseColorVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 				7689CB631F92707300C977BB /* Constants.swift */,
 				7689CB691F92AC8600C977BB /* Errors.swift */,
 				760843D21F9E8CF10086A1DE /* Date+Weeks.swift */,
+				76F3850D1FA669D600C487E5 /* UIColor+String.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -501,11 +510,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalFinance/Pods-PersonalFinance-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F3850A1FA62E2B00C487E5 /* ChooseColorVC.swift in Sources */,
 				76A039741F9B6E9400AC21E3 /* ExpenseService.swift in Sources */,
 				760BDC171F856A1F005999F7 /* PersonalFinance.xcdatamodeld in Sources */,
 				760444211F94001D002699AE /* ViewController+Notification.swift in Sources */,
@@ -607,7 +617,9 @@
 				768C204F1F977F2700D4463E /* CategoryService.swift in Sources */,
 				76BF84DE1F9BB98700052013 /* IncomesVC.swift in Sources */,
 				76A0397A1F9B7D8200AC21E3 /* IncomeCell.swift in Sources */,
+				76F3850E1FA669D600C487E5 /* UIColor+String.swift in Sources */,
 				76ED66531F924C51009980F1 /* UserService.swift in Sources */,
+				76F3850C1FA62F5B00C487E5 /* ColorCell.swift in Sources */,
 				76A0396E1F9B621800AC21E3 /* IncomeService.swift in Sources */,
 				768C204B1F977CF700D4463E /* CategoryVC.swift in Sources */,
 				7604441A1F9381BB002699AE /* GradientView.swift in Sources */,

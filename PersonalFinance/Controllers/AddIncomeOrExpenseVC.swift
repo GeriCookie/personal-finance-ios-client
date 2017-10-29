@@ -22,7 +22,8 @@ class AddIncomeOrExpenseVC: UIViewController {
     var incomeService: IncomeService?
     var expenseService: ExpenseService?
     @IBOutlet weak var categoryName: UILabel!
-    @IBOutlet weak var categoryColor: UILabel!
+    
+    @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var amountField: UITextField!
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -71,6 +72,7 @@ class AddIncomeOrExpenseVC: UIViewController {
         let strDate = dateFormatter.string(from: datePicker.date)
         date = strDate
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "choose category") {
             let modal = segue.destination
@@ -86,7 +88,7 @@ class AddIncomeOrExpenseVC: UIViewController {
 extension AddIncomeOrExpenseVC: CategoryVCDelegate {
     func didSelectCategory(_ category: Category) {
         categoryName.text = category.name
-        categoryColor.text = category.color
+        colorView.backgroundColor = UIColor.returnUIColor(components: category.color)
         self.category = category
     }
 }
@@ -97,11 +99,6 @@ extension AddIncomeOrExpenseVC: IncomeServiceDelegate {
         showSuccess(with: msg)
         
         DispatchQueue.main.async {
-            //let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            //let nextVC = storyboard.instantiateViewController(withIdentifier: "IncomesSavingsBudgetVC")
-            //self.dismiss(animated: true, completion: {
-              //  self.show(nextVC, sender: nil)
-            //})
             self.performSegue(withIdentifier: UNWIND, sender: nil)
         }
     }

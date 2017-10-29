@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 enum DateIntervalType: Int {
     case day = 0
@@ -18,7 +19,7 @@ enum DateIntervalType: Int {
 class ExpensesVC: UIViewController {
     @IBOutlet weak var currentDateLabel: UILabel!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pieChart: PieChartView!
     
     var service: ExpenseService?
     
@@ -29,15 +30,16 @@ class ExpensesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        tableView.register(IncomeCell.self, forCellReuseIdentifier: INCOME_CELL_IDENTIFIER)
-        tableView.dataSource = self
-        
         currentDate = Date()
         updateDate(byAdding: 0)
         
         service = ExpenseService()
         service?.delegate = self
         
+        service?.getExpensesByDate(from: currentDate, to: currentDate)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         service?.getExpensesByDate(from: currentDate, to: currentDate)
     }
     
@@ -58,9 +60,9 @@ class ExpensesVC: UIViewController {
         case .year:
             text =  self.getYearText()
         }
-        
+    
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.updatePieChart()
             self.currentDateLabel.text = text
         }
     }
@@ -189,25 +191,30 @@ class ExpensesVC: UIViewController {
     }
 }
 
-extension ExpensesVC: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expenses.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: INCOME_CELL_IDENTIFIER, for: indexPath)
-        if let cell = cell as? IncomeCell {
-            cell.date.text = expenses[indexPath.row].categoryName
-            cell.categoryName.text = expenses[indexPath.row].categoryColor
-            cell.amount.text = "\(expenses[indexPath.row].amountPerCategory)"
-            return cell
+extension ExpensesVC: ChartViewDelegate {
+    func updatePieChart() {
+        let entries: [PieChartDataEntry] = expenses.map {expense in
+            let entry = PieChartDataEntry(value: expense.amountPerCategory, label: expense.categoryName)
+            
+            return entry
         }
         
-        return UITableViewCell()
+        let colors: [UIColor] = expenses.map {expense in
+            let color = UIColor.returnUIColor(components: expense.categoryColor)
+            
+            return color
+        }
+//        let entry1 = PieChartDataEntry(value: Double(number1.value), label: "#1")
+//        let entry2 = PieChartDataEntry(value: Double(number2.value), label: "#2")
+//        let entry3 = PieChartDataEntry(value: Double(number3.value), label: "#3")
+        let dataSet = PieChartDataSet(values: entries, label: "Expenses Types")
+        let data = PieChartData(dataSet: dataSet)
+        
+        pieChart.data = data
+        pieChart.chartDescription?.text = "Expenses"
+        dataSet.colors = colors
+        
+        pieChart.notifyDataSetChanged()
     }
 }
 

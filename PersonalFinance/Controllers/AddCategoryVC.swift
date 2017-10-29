@@ -10,8 +10,10 @@ import UIKit
 
 class AddCategoryVC: UIViewController {
 
-    @IBOutlet weak var colorField: UITextField!
+    
+    @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var nameField: UITextField!
+    var color: UIColor = .white
     
     var categoryService: CategoryService?
     
@@ -27,14 +29,23 @@ class AddCategoryVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     @IBAction func onAddCategoryClicked(_ sender: Any) {
         guard let name = nameField.text, nameField.text != "" else {
             return
         }
-        guard let color = colorField.text, colorField.text != "" else {
-            return
+        let colorString = UIColor.stringFromUIColor(color: color)
+        
+        categoryService?.addCategory(with: name, color: colorString)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = "chooseColor"
+        if segue.identifier == identifier {
+            if let nextVC = segue.destination as? ChooseColorVC {
+                nextVC.delegate = self
+            }
         }
-        categoryService?.addCategory(with: name, color: color)
     }
 
 }
@@ -44,7 +55,12 @@ extension AddCategoryVC : CategoryServiceDelegate {
         print("Category posted")
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
+}
+
+extension AddCategoryVC: ChooseColorVCDelegate {
+    func didChooseColor(color: UIColor) {
+        self.color = color
+        self.colorView.backgroundColor = color
+    }
 }
 
