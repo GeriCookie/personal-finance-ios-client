@@ -17,12 +17,14 @@ class AddIncomeOrExpenseVC: UIViewController {
     
     var type: IncomeOrExpense?
     
+    
     var category: Category?
     var date: String?
     var incomeService: IncomeService?
     var expenseService: ExpenseService?
     @IBOutlet weak var categoryName: UILabel!
     
+
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var amountField: UITextField!
     
@@ -35,12 +37,17 @@ class AddIncomeOrExpenseVC: UIViewController {
         
         incomeService?.delegate = self
         expenseService?.delegate = self
+        if type == .income {
+            self.title = "Add Income"
+        }
+        else {
+            self.title = "Add Expense"
+            //navBar.topItem?.title = "Add Expense"
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
         
-//        datePicker.setDate(<#T##date: Date##Date#>, animated: <#T##Bool#>)
     }
     
     @IBAction func onAddClicked(_ sender: UIButton) {

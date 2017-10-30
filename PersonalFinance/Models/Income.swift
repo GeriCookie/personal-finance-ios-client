@@ -20,3 +20,16 @@ class Income: Codable {
         self.date = date
     }
 }
+
+struct IncomeByDate: Codable {
+    let amountPerCategory: Double
+    let categoryName: String
+    let categoryColor: String
+    
+    enum CodingKeys: String, CodingKey {
+        case amountPerCategory = "amount_per_category"
+        case categoryName = "category__name"
+        case categoryColor = "category__color"
+        
+    }
+}

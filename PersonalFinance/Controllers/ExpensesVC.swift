@@ -195,7 +195,6 @@ extension ExpensesVC: ChartViewDelegate {
     func updatePieChart() {
         let entries: [PieChartDataEntry] = expenses.map {expense in
             let entry = PieChartDataEntry(value: expense.amountPerCategory, label: expense.categoryName)
-            
             return entry
         }
         
@@ -207,12 +206,15 @@ extension ExpensesVC: ChartViewDelegate {
 //        let entry1 = PieChartDataEntry(value: Double(number1.value), label: "#1")
 //        let entry2 = PieChartDataEntry(value: Double(number2.value), label: "#2")
 //        let entry3 = PieChartDataEntry(value: Double(number3.value), label: "#3")
+        pieChart.chartDescription?.textColor = UIColor.white
+        pieChart.chartDescription?.font = .systemFont(ofSize: 15, weight: .bold)
         let dataSet = PieChartDataSet(values: entries, label: "Expenses Types")
         let data = PieChartData(dataSet: dataSet)
         
         pieChart.data = data
         pieChart.chartDescription?.text = "Expenses"
         dataSet.colors = colors
+        dataSet.valueFont = .systemFont(ofSize: 15, weight: .bold)
         
         pieChart.notifyDataSetChanged()
     }
