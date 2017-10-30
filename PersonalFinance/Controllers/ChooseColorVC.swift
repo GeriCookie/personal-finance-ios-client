@@ -46,6 +46,7 @@ extension ChooseColorVC: UICollectionViewDelegate, UICollectionViewDataSource, U
             cell.configureCell(index: indexPath.item)
             return cell
         }
+        
         return ColorCell()
     }
     
@@ -56,28 +57,23 @@ extension ChooseColorVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 48
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var numberOfColums: CGFloat = 3
-        if UIScreen.main.bounds.width > 320 {
-            numberOfColums = 4
-        }
+        let offset = 0.2
+        let columnsCount = 5
         
-        let spaceBetweenCells: CGFloat = 10
-        let padding: CGFloat = 40
-        let cellDimention = ((collectionView.bounds.width - padding) - (numberOfColums - 1) * spaceBetweenCells) / numberOfColums
-        return CGSize(width: cellDimention, height: cellDimention)
+        let cellsTotalSize = CGFloat(1 - offset) * collectionView.bounds.width
+        let cellSize = cellsTotalSize / CGFloat(columnsCount)
+        
+        return CGSize(width: cellSize, height: cellSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let color = CATEGORY_COLORS[indexPath.item]
         delegate?.didChooseColor(color: color)
         self.dismiss(animated: true, completion: nil)
-
     }
-
 }
 
 protocol ChooseColorVCDelegate {

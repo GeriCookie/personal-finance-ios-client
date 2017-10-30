@@ -9,9 +9,12 @@
 import UIKit
 
 class AddNewBalanceItemVC: UIViewController {
-
+    var cacheService: CacheService?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cacheService = CacheService()
 
         // Do any additional setup after loading the view.
     }
@@ -23,13 +26,18 @@ class AddNewBalanceItemVC: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "add expense" || segue.identifier == "add income" {
-            guard let nextVC = segue.destination as? AddIncomeOrExpenseVC else {
-                return
-            }
-            
-            nextVC.type = segue.identifier == "add expense"
+            let balanceType: IncomeOrExpense = (segue.identifier == "add expense")
                 ? .expense
                 : .income
+            
+            cacheService?.setBalanceType(type: balanceType)
+        }
+        if segue.identifier == "add savings goal" || segue.identifier == "add budget" {
+            let balanceType: BudgetOrSavings = (segue.identifier == "add budget")
+                ? .budget
+                : .savings
+            
+            cacheService?.setBalanceType(type: balanceType)
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

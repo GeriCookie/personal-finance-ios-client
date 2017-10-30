@@ -8,22 +8,22 @@
 
 import UIKit
 
-enum IncomeOrExpense {
-    case income
-    case expense
+enum IncomeOrExpense: String {
+    case income = "Income"
+    case expense = "Expense"
 }
 
 class AddIncomeOrExpenseVC: UIViewController {
     
     var type: IncomeOrExpense?
     
-    
     var category: Category?
     var date: String?
     var incomeService: IncomeService?
     var expenseService: ExpenseService?
-    @IBOutlet weak var categoryName: UILabel!
+    var cacheService: CacheService?
     
+    @IBOutlet weak var categoryName: UILabel!
 
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var amountField: UITextField!
@@ -34,20 +34,19 @@ class AddIncomeOrExpenseVC: UIViewController {
         super.viewDidLoad()
         incomeService = IncomeService()
         expenseService = ExpenseService()
+        cacheService = CacheService()
         
         incomeService?.delegate = self
         expenseService?.delegate = self
+        type = cacheService?.getBalanceType()
         if type == .income {
             self.title = "Add Income"
-        }
-        else {
+        } else if type == .expense {
             self.title = "Add Expense"
             //navBar.topItem?.title = "Add Expense"
+        } else {
+            self.title = "Add"
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
     }
     
     @IBAction func onAddClicked(_ sender: UIButton) {
@@ -106,7 +105,7 @@ extension AddIncomeOrExpenseVC: IncomeServiceDelegate {
         showSuccess(with: msg)
         
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: UNWIND, sender: nil)
+            self.performSegue(withIdentifier: UNWIND_TO_INCOMES, sender: nil)
         }
     }
     

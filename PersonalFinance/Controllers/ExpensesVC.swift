@@ -22,6 +22,7 @@ class ExpensesVC: UIViewController {
     @IBOutlet weak var pieChart: PieChartView!
     
     var service: ExpenseService?
+    var cacheService: CacheService?
     
     var expenses = [ExpenseByDate]()
     var currentDate = Date.now
@@ -35,6 +36,8 @@ class ExpensesVC: UIViewController {
         
         service = ExpenseService()
         service?.delegate = self
+        
+        cacheService = CacheService()
         
         service?.getExpensesByDate(from: currentDate, to: currentDate)
     }
@@ -188,6 +191,12 @@ class ExpensesVC: UIViewController {
     @IBAction func onDateIntervalTypeChanged(_ sender: UISegmentedControl) {
         currentDateIntervalType = DateIntervalType(rawValue: sender.selectedSegmentIndex)!
         updateDate(byAdding: 0)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "add expense" {
+            cacheService?.setBalanceType(type: .expense)
+        }
     }
 }
 

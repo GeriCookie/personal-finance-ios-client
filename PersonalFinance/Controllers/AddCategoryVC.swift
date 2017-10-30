@@ -47,7 +47,6 @@ class AddCategoryVC: UIViewController {
             }
         }
     }
-
 }
 
 extension AddCategoryVC : CategoryServiceDelegate {

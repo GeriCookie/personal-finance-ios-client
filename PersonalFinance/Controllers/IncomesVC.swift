@@ -12,9 +12,9 @@ import Charts
 class IncomesVC: UIViewController {
     
     var service: IncomeService?
+    var cacheService: CacheService?
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
-    
     
     @IBOutlet weak var currentDateLabel: UILabel!
     
@@ -30,6 +30,9 @@ class IncomesVC: UIViewController {
         
         service = IncomeService()
         service?.delegate = self
+        
+        cacheService = CacheService()
+        
         service?.getIncomesByDate(from: currentDate.startOfMonth, to: currentDate.endOfMonth)
     }
 
@@ -181,6 +184,11 @@ class IncomesVC: UIViewController {
         updateDate(byAdding: 0)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "add income" {
+            cacheService?.setBalanceType(type: .income)
+        }
+    }
 }
 
 extension IncomesVC: ChartViewDelegate {
@@ -195,11 +203,7 @@ extension IncomesVC: ChartViewDelegate {
             
             return color
         }
-        //        let entry1 = PieChartDataEntry(value: Double(number1.value), label: "#1")
-        //        let entry2 = PieChartDataEntry(value: Double(number2.value), label: "#2")
-        //        let entry3 = PieChartDataEntry(value: Double(number3.value), label: "#3")
-        pieChart.chartDescription?.textColor = UIColor.white
-        pieChart.chartDescription?.font = .systemFont(ofSize: 15, weight: .bold)
+        
         let dataSet = PieChartDataSet(values: entries, label: "Expenses Types")
         let data = PieChartData(dataSet: dataSet)
         
@@ -211,8 +215,6 @@ extension IncomesVC: ChartViewDelegate {
         pieChart.notifyDataSetChanged()
     }
 }
-
-
 
 extension IncomesVC: IncomeServiceDelegate {
     func didGetIncomesByDateSuccess(with incomes: [IncomeByDate]) {

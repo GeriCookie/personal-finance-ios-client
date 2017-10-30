@@ -74,7 +74,9 @@ class HttpRequester {
                     self.handleError(forHttpMethod: httpMethod, with: error)
                     return
                 }
+                
                 print("Response error: \(responseError)")
+                print(try? JSONSerialization.jsonObject(with: responseError, options: .allowFragments))
                 self.handleError(forHttpMethod: httpMethod, with: BackendError.generalError(reason: (error?.localizedDescription)!))
             }
         }
@@ -108,4 +110,13 @@ protocol HttpRequesterDelegate {
     func didPostSuccess(with data: Data)
     func didPostFailed(with error: BackendError)
     func didPostFailed(with error: Data)
+}
+
+extension HttpRequesterDelegate {
+    func didGetSuccess(with data: Data) { }
+    func didGetFailed(with error: BackendError)  { }
+    
+    func didPostSuccess(with data: Data) { }
+    func didPostFailed(with error: BackendError) { }
+    func didPostFailed(with error: Data) { }
 }

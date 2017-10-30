@@ -39,4 +39,21 @@ class CacheService {
         userDefaults = .standard
     }
     
+    func setBalanceType(type: IncomeOrExpense) {
+        userDefaults.set(type.rawValue, forKey: BALANCE_TYPE_KEY)
+    }
+    
+    func setBalanceType(type: BudgetOrSavings) {
+        userDefaults.set(type.rawValue, forKey: BALANCE_TYPE_KEY)
+    }
+    
+    func getBalanceType() -> IncomeOrExpense? {
+        let typeString = userDefaults.value(forKey: BALANCE_TYPE_KEY) as! String
+        return IncomeOrExpense(rawValue: typeString)
+    }
+    
+    func getBalanceType() -> BudgetOrSavings? {
+        let typeString = userDefaults.value(forKey: BALANCE_TYPE_KEY) as! String
+        return BudgetOrSavings(rawValue: typeString)
+    }
 }
