@@ -239,9 +239,7 @@ extension BaseExpenseIncomeViewController: ChartViewDelegate {
                 return color
             }
         }
-        //        let entry1 = PieChartDataEntry(value: Double(number1.value), label: "#1")
-        //        let entry2 = PieChartDataEntry(value: Double(number2.value), label: "#2")
-        //        let entry3 = PieChartDataEntry(value: Double(number3.value), label: "#3")
+        
         pieChart.chartDescription?.textColor = UIColor.white
         pieChart.chartDescription?.font = .systemFont(ofSize: 15, weight: .bold)
         let labelMessage = type == .expense
