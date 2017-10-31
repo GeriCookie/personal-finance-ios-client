@@ -48,7 +48,6 @@ class ExpensesVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func updateUI() {
@@ -89,10 +88,6 @@ class ExpensesVC: UIViewController {
     }
     
     func getWeekText() -> String {
-//        guard let date = currentDate else {
-//            return ""
-//        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM"
         
@@ -109,10 +104,6 @@ class ExpensesVC: UIViewController {
     }
     
     func getMonthText() -> String {
-//        guard let date = currentDate else {
-//            return ""
-//        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
         
@@ -144,10 +135,6 @@ class ExpensesVC: UIViewController {
     }
     
     func updateDate(byAdding value: Int) {
-//        guard let date = currentDate else {
-//            return
-//        }
-        
         var components = DateComponents()
         switch(currentDateIntervalType) {
         case .day:

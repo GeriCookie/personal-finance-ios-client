@@ -14,7 +14,8 @@ class IncomesVC: UIViewController {
     var service: IncomeService?
     var cacheService: CacheService?
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+    }
     
     @IBOutlet weak var currentDateLabel: UILabel!
     
@@ -23,8 +24,7 @@ class IncomesVC: UIViewController {
     var currentDate = Date.now
     var currentDateIntervalType: DateIntervalType = .month
     var incomes = [IncomeByDate]()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +39,7 @@ class IncomesVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         service?.getIncomesByDate(from: currentDate.startOfMonth, to: currentDate.endOfMonth)
     }
-    
-    
+
     func updateUI() {
         var text = ""
         switch(self.currentDateIntervalType) {
@@ -61,10 +60,6 @@ class IncomesVC: UIViewController {
     }
     
     func getDayText() -> String {
-        //        guard let date = currentDate else {
-        //            return ""
-        //        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         var text = dateFormatter.string(from: currentDate)
@@ -79,10 +74,6 @@ class IncomesVC: UIViewController {
     }
     
     func getWeekText() -> String {
-        //        guard let date = currentDate else {
-        //            return ""
-        //        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM"
         
@@ -99,10 +90,6 @@ class IncomesVC: UIViewController {
     }
     
     func getMonthText() -> String {
-        //        guard let date = currentDate else {
-        //            return ""
-        //        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
         
@@ -116,10 +103,6 @@ class IncomesVC: UIViewController {
     }
     
     func getYearText() -> String {
-        //        guard let date = currentDate else {
-        //            return ""
-        //        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY"
         
@@ -134,10 +117,6 @@ class IncomesVC: UIViewController {
     }
     
     func updateDate(byAdding value: Int) {
-        //        guard let date = currentDate else {
-        //            return
-        //        }
-        
         var components = DateComponents()
         switch(currentDateIntervalType) {
         case .day:

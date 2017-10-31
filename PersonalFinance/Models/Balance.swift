@@ -9,15 +9,19 @@
 import Foundation
 
 class Balance: Codable {
+    var recommendedExpensesPerDay: String?
+    
     var totalIncome: String?
     var totalExpense: String?
-    var totalAmount: String?
-    var recommendedExpensesPerDay: String?
-    var targetSavingsBudgetEnd: String?
     var totalSavings: String?
+    var totalAmount: String?
+    
     var remainingBudget: String?
+    var targetSavingsBudgetEnd: String?
+    
     var averageExpensesPerDay: String?
     var endDateAvailableFunds: String?
+    
     var incomes: [Income]?
     var expenses: [Expense]?
     var savingGoals: [SavingsGoal]?

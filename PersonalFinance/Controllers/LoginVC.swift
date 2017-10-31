@@ -18,8 +18,6 @@ class LoginVC: UIViewController {
         setupView()
         userService = UserService()
         userService?.delegate = self
-        
-       
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,10 +49,12 @@ class LoginVC: UIViewController {
 }
 
 extension LoginVC: UserServiceDelegate {
-    
     func didRegisterSuccess() {
         self.dismiss(animated: true, completion: nil)
-        print("Logged in")
+        DispatchQueue.main.async {
+            (UIApplication.shared.delegate as? AppDelegate)?
+                .showBalanceScreen()
+        }
     }
     
     

@@ -269,14 +269,14 @@
 		76ED664B1F923DE5009980F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7689CB611F926F0A00C977BB /* User.swift */,
 				7689CB671F927D9F00C977BB /* AuthToken.swift */,
-				768C20501F977FDF00D4463E /* Category.swift */,
-				762991001F98F24D00E005CD /* Income.swift */,
-				76A039751F9B6FDC00AC21E3 /* Expense.swift */,
-				767D4BBC1FA7C70A0042D05C /* SavingsGoal.swift */,
-				767D4BBE1FA7C7C80042D05C /* Budget.swift */,
 				7622E06C1FA7ECBB0030B7E3 /* Balance.swift */,
+				767D4BBE1FA7C7C80042D05C /* Budget.swift */,
+				768C20501F977FDF00D4463E /* Category.swift */,
+				76A039751F9B6FDC00AC21E3 /* Expense.swift */,
+				762991001F98F24D00E005CD /* Income.swift */,
+				767D4BBC1FA7C70A0042D05C /* SavingsGoal.swift */,
+				7689CB611F926F0A00C977BB /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -535,10 +535,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalFinance/Pods-PersonalFinance-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

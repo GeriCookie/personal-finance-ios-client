@@ -18,13 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         cacheService = CacheService()
         if cacheService?.authToken == "" {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let authVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-            window?.makeKeyAndVisible()
-            window?.rootViewController?.present(authVC, animated: true, completion: nil)
+//            showBalanceScreen()
+            showLoginScreen()
         }
-        // Override point for customization after application launch.
+        
         return true
+    }
+    
+    func showLoginScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let authVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        window?.makeKeyAndVisible()
+        window?.rootViewController?.present(authVC, animated: true, completion: nil)
+    }
+    
+    func showBalanceScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let balanceVC = storyboard.instantiateViewController(withIdentifier: "BalanceVC")
+        window?.makeKeyAndVisible()
+        window?.rootViewController?.present(balanceVC, animated: true, completion: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

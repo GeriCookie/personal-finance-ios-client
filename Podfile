@@ -7,6 +7,7 @@ target 'PersonalFinance' do
 
   # Pods for PersonalFinance
   pod 'Charts'
+  pod 'Toaster'
 
   target 'PersonalFinanceTests' do
     inherit! :search_paths

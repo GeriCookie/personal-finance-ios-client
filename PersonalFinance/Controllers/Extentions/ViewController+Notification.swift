@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import Toaster
 
 extension UIViewController {
     func showError(withMessage message: String) {
-        let alert = UIAlertController(title: "Oppps. Something happend", message: message, preferredStyle: .alert)
-        DispatchQueue.main.async {
-            self.show(alert, sender: self)
-        }
+        Toast(text: message)
+            .show()
+//        let alert = UIAlertController(title: "Oppps. Something happend", message: message, preferredStyle: .alert)
+//        DispatchQueue.main.async {
+//            self.show(alert, sender: self)
+//        }
     }
-    
+
     func showSuccess(with message: String) {
-        let alert = UIAlertController(title: "Yuhuuuu", message: message, preferredStyle: .alert)
-        DispatchQueue.main.async {
-            self.show(alert, sender: self)
-        }
+        Toast(text: message)
+            .show()
     }
 }

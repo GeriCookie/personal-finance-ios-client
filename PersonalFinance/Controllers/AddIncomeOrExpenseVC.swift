@@ -104,9 +104,11 @@ extension AddIncomeOrExpenseVC: IncomeServiceDelegate {
         let msg = "Income added"
         showSuccess(with: msg)
         
+//        dismiss(animated: true, completion: nil)
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: UNWIND_TO_INCOMES, sender: nil)
         }
+        
     }
     
     func didGetIncomesSuccess(with incomes: [Income]) {
