@@ -187,7 +187,7 @@
                                     <segment title="Year"/>
                                 </segments>
                                 <connections>
-                                    <action selector="onDateIntervalTypeChanged:" destination="oWk-du-c6Y" eventType="valueChanged" id="wWU-7M-3kZ"/>
+                                    <action selector="onDateIntervalTypeChanged:" destination="oWk-du-c6Y" eventType="valueChanged" id="P8o-os-DuW"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-rX-SWa">
@@ -195,7 +195,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;"/>
                                 <connections>
-                                    <action selector="onPrevDateClick:" destination="oWk-du-c6Y" eventType="touchUpInside" id="ZyD-Dx-MGL"/>
+                                    <action selector="onPrevDateClick:" destination="oWk-du-c6Y" eventType="touchUpInside" id="WDT-Rn-u7H"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebi-tu-qXF">
@@ -210,7 +210,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
-                                    <action selector="onNextDateClick:" destination="oWk-du-c6Y" eventType="touchUpInside" id="vMb-6Q-aHE"/>
+                                    <action selector="onNextDateClick:" destination="oWk-du-c6Y" eventType="touchUpInside" id="EGk-CG-fY6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8Z-SH-GaQ">
@@ -232,8 +232,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Expenses" id="TLP-RT-aY3"/>
                     <connections>
-                        <outlet property="currentDateLabel" destination="Ebi-tu-qXF" id="9mH-Q5-xlx"/>
-                        <outlet property="pieChart" destination="Ldi-2a-yxh" id="QNt-9P-slT"/>
+                        <outlet property="currentDateLabel" destination="Ebi-tu-qXF" id="Abx-lT-Z7b"/>
+                        <outlet property="pieChart" destination="Ldi-2a-yxh" id="A7d-BO-t6b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nT7-Mi-Eb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +382,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;"/>
                                 <connections>
-                                    <action selector="onPrevDateClicked:" destination="hkk-2a-0pN" eventType="touchUpInside" id="9uJ-x0-Ui4"/>
+                                    <action selector="onPrevDateClick:" destination="hkk-2a-0pN" eventType="touchUpInside" id="tbL-UN-wMh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iL-ZG-7Qk">
@@ -397,7 +397,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
-                                    <action selector="onNextDateClicked:" destination="hkk-2a-0pN" eventType="touchUpInside" id="xMQ-wf-oGT"/>
+                                    <action selector="onNextDateClick:" destination="hkk-2a-0pN" eventType="touchUpInside" id="aqp-7J-Sg0"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="sHD-RL-Ksj">
@@ -410,7 +410,7 @@
                                     <segment title="Year"/>
                                 </segments>
                                 <connections>
-                                    <action selector="onDateIntervalTypeChanged:" destination="hkk-2a-0pN" eventType="valueChanged" id="ZTY-yK-CI5"/>
+                                    <action selector="onDateIntervalTypeChanged:" destination="hkk-2a-0pN" eventType="valueChanged" id="Ecv-Cn-YIg"/>
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNZ-ZK-tyz" customClass="PieChartView" customModule="Charts">
@@ -432,13 +432,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Incomes" id="e9m-GI-6hh"/>
                     <connections>
-                        <outlet property="currentDateLabel" destination="9iL-ZG-7Qk" id="7Mg-76-nAH"/>
-                        <outlet property="pieChart" destination="UNZ-ZK-tyz" id="XJH-0b-JzM"/>
+                        <outlet property="currentDateLabel" destination="9iL-ZG-7Qk" id="ggk-Dj-Npe"/>
+                        <outlet property="pieChart" destination="UNZ-ZK-tyz" id="3es-Zt-feW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLi-cG-0Eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="707.49625187406298"/>
+            <point key="canvasLocation" x="2001" y="866"/>
         </scene>
         <!--Balance-->
         <scene sceneID="NVw-aG-ZA0">
@@ -765,6 +765,7 @@
                         <outlet property="colorView" destination="99X-fW-nyu" id="K81-vw-E3c"/>
                         <outlet property="datePicker" destination="7go-at-MVp" id="Kmo-mZ-83F"/>
                         <segue destination="oDX-mf-ZYy" kind="unwind" identifier="toIncomes" unwindAction="prepareForUnwindWithSegue:" id="OSg-eP-gr5"/>
+                        <segue destination="oDX-mf-ZYy" kind="unwind" identifier="toExpenses" unwindAction="prepareForUnwindExpencesWithSegue:" id="hWg-73-0sN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDg-oz-1HI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1130,7 +1131,7 @@
         <image name="Personal" width="296" height="126"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dAI-7h-ELX"/>
+        <segue reference="lCy-7c-vxe"/>
         <segue reference="40a-gr-Xfq"/>
     </inferredMetricsTieBreakers>
 </document>

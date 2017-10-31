@@ -120,6 +120,8 @@ extension AddIncomeOrExpenseVC: ExpenseServiceDelegate {
         let msg = "Expense added"
         
         showSuccess(with: msg)
-        dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: UNWIND_TO_EXPENSES, sender: nil)
+        }
     }
 }
