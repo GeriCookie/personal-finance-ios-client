@@ -36,6 +36,7 @@ class BalanceVC: UIViewController {
         balanceService?.delegate = self
         
         cacheService = CacheService()
+        self.title = "Personal Balance"
     }
     
     override func viewDidAppear(_ animated: Bool) {

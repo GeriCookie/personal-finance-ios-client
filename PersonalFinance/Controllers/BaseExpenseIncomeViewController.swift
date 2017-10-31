@@ -213,26 +213,25 @@ class BaseExpenseIncomeViewController: UIViewController {
 extension BaseExpenseIncomeViewController: ChartViewDelegate {
     func updatePieChart() {
         var entries: [PieChartDataEntry]
+        var colors: [UIColor]
+        
         if type == .expense {
             entries = expenses.map {expense in
                 let entry = PieChartDataEntry(value: expense.amountPerCategory, label: expense.categoryName)
                 return entry
             }
-        } else {
-            entries = incomes.map {income in
-                let entry = PieChartDataEntry(value: income.amountPerCategory, label: income.categoryName)
-                return entry
-            }
-        }
-        
-        var colors: [UIColor]
-        if type == .expense {
+            
             colors = expenses.map {expense in
                 let color = UIColor.returnUIColor(components: expense.categoryColor)
                 
                 return color
             }
         } else {
+            entries = incomes.map {income in
+                let entry = PieChartDataEntry(value: income.amountPerCategory, label: income.categoryName)
+                return entry
+            }
+            
             colors = incomes.map {income in
                 let color = UIColor.returnUIColor(components: income.categoryColor)
                 

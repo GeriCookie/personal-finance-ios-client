@@ -18,6 +18,7 @@ class ChooseColorVC: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        self.title = "Choose color"
     }
 
     override func didReceiveMemoryWarning() {

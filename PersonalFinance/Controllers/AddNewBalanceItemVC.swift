@@ -15,7 +15,7 @@ class AddNewBalanceItemVC: UIViewController {
         super.viewDidLoad()
         
         cacheService = CacheService()
-
+        self.title = "Add new Balance Item"
         // Do any additional setup after loading the view.
     }
 

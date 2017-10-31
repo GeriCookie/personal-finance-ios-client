@@ -27,6 +27,7 @@ class CategoryVC: UIViewController {
         service?.delegate = self
         
         service?.loadCategories()
+        self.title = "Categories"
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -21,7 +21,7 @@ class AddCategoryVC: UIViewController {
         super.viewDidLoad()
         categoryService = CategoryService()
         categoryService?.delegate = self
-
+        self.title = "Add Category"
         // Do any additional setup after loading the view.
     }
 

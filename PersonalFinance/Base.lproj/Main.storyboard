@@ -702,40 +702,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLk-Rq-x3m">
-                                <rect key="frame" x="126" y="163" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Income"/>
-                                <connections>
-                                    <segue destination="zdx-bf-QED" kind="show" identifier="add income" id="EqU-em-zpp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I11-qg-Vk1">
-                                <rect key="frame" x="110" y="242" width="115" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Budget goal"/>
-                                <connections>
-                                    <segue destination="Hhk-kB-0SF" kind="show" identifier="add budget" id="40a-gr-Xfq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubo-Kc-mc9">
-                                <rect key="frame" x="107" y="296" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Savings Goal"/>
-                                <connections>
-                                    <segue destination="Hhk-kB-0SF" kind="show" identifier="add savings goal" id="M7j-YB-gbx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ap-HS-9wI">
-                                <rect key="frame" x="122" y="204" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Expense"/>
-                                <connections>
-                                    <segue destination="zdx-bf-QED" kind="show" identifier="add expense" id="TQL-D5-yVb"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Q5K-lP-Igr">
+                                <rect key="frame" x="20" y="146.5" width="280" height="275"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLk-Rq-x3m" customClass="RoundedButton" customModule="PersonalFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                        <color key="backgroundColor" white="0.94064670138888884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="pLs-Yz-fYW"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Income">
+                                            <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="zdx-bf-QED" kind="show" identifier="add income" id="EqU-em-zpp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ap-HS-9wI" customClass="RoundedButton" customModule="PersonalFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="75" width="280" height="50"/>
+                                        <color key="backgroundColor" white="0.93619791663611118" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xat-bN-XDr"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Expense">
+                                            <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="zdx-bf-QED" kind="show" identifier="add expense" id="TQL-D5-yVb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I11-qg-Vk1" customClass="RoundedButton" customModule="PersonalFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="150" width="280" height="50"/>
+                                        <color key="backgroundColor" white="0.93538411455277781" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Fw0-Er-mLO"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Budget goal">
+                                            <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Hhk-kB-0SF" kind="show" identifier="add budget" id="40a-gr-Xfq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubo-Kc-mc9" customClass="RoundedButton" customModule="PersonalFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="225" width="280" height="50"/>
+                                        <color key="backgroundColor" white="0.94306098090277779" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AHb-ny-Gu5"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Savings Goal">
+                                            <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Hhk-kB-0SF" kind="show" identifier="add savings goal" id="M7j-YB-gbx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q5K-lP-Igr" firstAttribute="centerY" secondItem="yc5-gR-pOU" secondAttribute="centerY" id="0Le-TQ-dUC"/>
+                            <constraint firstItem="Q5K-lP-Igr" firstAttribute="centerX" secondItem="yc5-gR-pOU" secondAttribute="centerX" id="R6t-wy-CZt"/>
+                            <constraint firstItem="tBz-xL-yHW" firstAttribute="trailing" secondItem="Q5K-lP-Igr" secondAttribute="trailing" constant="20" id="Rbx-gL-hIu"/>
+                            <constraint firstItem="Q5K-lP-Igr" firstAttribute="leading" secondItem="tBz-xL-yHW" secondAttribute="leading" constant="20" id="XFj-QM-KKV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tBz-xL-yHW"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yli-F6-5Ph"/>
@@ -825,13 +856,6 @@
                                     <action selector="datePickerAction:" destination="zdx-bf-QED" eventType="valueChanged" id="PnB-8z-C7d"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-1q-Rpg">
-                                <rect key="frame" x="92" y="89" width="42" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EP3-uS-A7J">
                                 <rect key="frame" x="157" y="429" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -845,6 +869,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-1q-Rpg">
+                                <rect key="frame" x="75" y="89" width="42" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MC8-Hz-tdQ"/>
@@ -1265,7 +1296,7 @@
         <image name="Personal" width="296" height="126"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hfn-ED-WnD"/>
+        <segue reference="EqU-em-zpp"/>
         <segue reference="M7j-YB-gbx"/>
     </inferredMetricsTieBreakers>
 </document>
