@@ -169,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="657" y="131"/>
         </scene>
-        <!--Expenses-->
+        <!--ExpensesVC-->
         <scene sceneID="EHN-mZ-2nG">
             <objects>
                 <viewController id="oWk-du-c6Y" customClass="ExpensesVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,14 +213,6 @@
                                     <action selector="onNextDateClick:" destination="oWk-du-c6Y" eventType="touchUpInside" id="EGk-CG-fY6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8Z-SH-GaQ">
-                                <rect key="frame" x="313" y="40" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <segue destination="sYv-po-eTf" kind="show" identifier="add expense" id="lCy-7c-vxe"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ldi-2a-yxh" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="143" width="343" height="486"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,7 +222,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e53-ih-hII"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Expenses" id="TLP-RT-aY3"/>
+                    <navigationItem key="navigationItem" id="JIB-0G-aAg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rYy-5h-BQa">
+                            <connections>
+                                <segue destination="zdx-bf-QED" kind="show" identifier="add expense" id="hfn-ED-WnD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentDateLabel" destination="Ebi-tu-qXF" id="Abx-lT-Z7b"/>
                         <outlet property="pieChart" destination="Ldi-2a-yxh" id="A7d-BO-t6b"/>
@@ -238,9 +236,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nT7-Mi-Eb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.8000000000002" y="366.56671664167919"/>
+            <point key="canvasLocation" x="3349" y="152"/>
         </scene>
-        <!--B & S -->
+        <!--Budget And SavingsVC-->
         <scene sceneID="PAn-gM-oec">
             <objects>
                 <viewController id="SrV-qu-IqW" customClass="BudgetAndSavingsVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
@@ -350,10 +348,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sTO-jj-265"/>
                     </view>
-                    <tabBarItem key="tabBarItem" id="It9-x0-EAs">
-                        <string key="title">B &amp; S
-</string>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="Hw8-jw-GbU"/>
                     <connections>
                         <outlet property="budgetAmountLabel" destination="VlR-Jc-4e3" id="V74-vl-1Fk"/>
                         <outlet property="budgetCompletedLabel" destination="Ust-QO-asQ" id="rKb-gI-Vf0"/>
@@ -367,9 +362,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOT-e7-v69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="713"/>
+            <point key="canvasLocation" x="958" y="1689"/>
         </scene>
-        <!--Incomes-->
+        <!--IncomesVC-->
         <scene sceneID="jYj-8b-lqj">
             <objects>
                 <viewController storyboardIdentifier="IncomesSavingsBudgetVC" id="hkk-2a-0pN" customClass="IncomesVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
@@ -418,19 +413,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esJ-FV-zCh">
-                                <rect key="frame" x="313" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <segue destination="sYv-po-eTf" kind="show" identifier="add income" id="dAI-7h-ELX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JeW-XD-me2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Incomes" id="e9m-GI-6hh"/>
+                    <navigationItem key="navigationItem" id="KaT-Fb-9Kx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OWn-Aa-Evq">
+                            <connections>
+                                <segue destination="zdx-bf-QED" kind="show" identifier="add income" id="cLv-Ij-taS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentDateLabel" destination="9iL-ZG-7Qk" id="ggk-Dj-Npe"/>
                         <outlet property="pieChart" destination="UNZ-ZK-tyz" id="3es-Zt-feW"/>
@@ -438,9 +431,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLi-cG-0Eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="866"/>
+            <point key="canvasLocation" x="3616.875" y="864.08450704225356"/>
         </scene>
-        <!--Balance-->
+        <!--BalanceVC-->
         <scene sceneID="NVw-aG-ZA0">
             <objects>
                 <viewController storyboardIdentifier="BalanceVC" id="OJx-0Z-Qcx" customClass="BalanceVC" customModule="PersonalFinance" customModuleProvider="target" sceneMemberID="viewController">
@@ -448,13 +441,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phc-W7-nmK">
-                                <rect key="frame" x="180" y="30" width="120" height="30"/>
-                                <state key="normal" title="Add Balance item"/>
-                                <connections>
-                                    <segue destination="e0F-dG-XCj" kind="show" id="MwT-qP-lWN"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Tcy-Le-USm">
                                 <rect key="frame" x="8" y="81.5" width="304" height="405"/>
                                 <subviews>
@@ -680,14 +666,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Phc-W7-nmK" firstAttribute="top" secondItem="wkl-4d-h9l" secondAttribute="top" constant="10" id="FnH-n4-dm2"/>
                             <constraint firstItem="Tcy-Le-USm" firstAttribute="centerX" secondItem="4IQ-IV-QOC" secondAttribute="centerX" id="WRZ-zP-cZV"/>
                             <constraint firstItem="Tcy-Le-USm" firstAttribute="centerY" secondItem="4IQ-IV-QOC" secondAttribute="centerY" id="b83-nh-4qj"/>
-                            <constraint firstItem="wkl-4d-h9l" firstAttribute="trailing" secondItem="Phc-W7-nmK" secondAttribute="trailing" constant="20" id="r2p-up-gAz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wkl-4d-h9l"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Balance" id="ppQ-68-nE1"/>
+                    <navigationItem key="navigationItem" id="ryt-PR-Tiy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sum-DM-PbG">
+                            <connections>
+                                <segue destination="eeb-EV-9H1" kind="show" id="Sfq-Bq-3Me"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="allExpensesLabel" destination="6XP-vl-cYL" id="pmf-bI-E8Y"/>
                         <outlet property="allIncomesLabel" destination="yd0-lJ-Tk9" id="KCu-Yx-5t9"/>
@@ -702,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uks-9r-X4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.8" y="-792.05397301349331"/>
+            <point key="canvasLocation" x="2398.125" y="-792.25352112676057"/>
         </scene>
         <!--Add New Balance ItemVC-->
         <scene sceneID="aEd-MQ-1xh">
@@ -717,7 +707,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Income"/>
                                 <connections>
-                                    <segue destination="sYv-po-eTf" kind="show" identifier="add income" id="C0R-Ip-7CG"/>
+                                    <segue destination="zdx-bf-QED" kind="show" identifier="add income" id="EqU-em-zpp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I11-qg-Vk1">
@@ -741,7 +731,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Expense"/>
                                 <connections>
-                                    <segue destination="sYv-po-eTf" kind="show" identifier="add expense" id="L6d-VJ-PMo"/>
+                                    <segue destination="zdx-bf-QED" kind="show" identifier="add expense" id="TQL-D5-yVb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -752,7 +742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnX-eF-Vzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4212" y="-731.78410794602701"/>
+            <point key="canvasLocation" x="3405" y="-792.25352112676057"/>
         </scene>
         <!--Add Budget Or Savings Goal-->
         <scene sceneID="w5M-oh-X2B">
@@ -800,7 +790,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHd-s6-5AD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="X7Y-fS-eTr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5179" y="232"/>
+            <point key="canvasLocation" x="5304" y="108"/>
         </scene>
         <!--Add Income Or ExpenseVC-->
         <scene sceneID="f3y-3s-QJs">
@@ -872,7 +862,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDg-oz-1HI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oDX-mf-ZYy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6511.1999999999998" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="4731" y="-979"/>
         </scene>
         <!--CategoryVC-->
         <scene sceneID="GHs-5C-Bde">
@@ -933,7 +923,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNz-xy-Vub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7391.1999999999998" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="7786.875" y="-708.80281690140851"/>
         </scene>
         <!--Add CategoryVC-->
         <scene sceneID="UB3-ar-eRm">
@@ -982,7 +972,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFh-Lt-rso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8335.2000000000007" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="8731.875" y="-708.80281690140851"/>
         </scene>
         <!--Choose ColorVC-->
         <scene sceneID="qeX-AX-zal">
@@ -1038,7 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="to7-yW-7Cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9524" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="9920.625" y="-708.80281690140851"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nOT-x1-bTf">
@@ -1050,10 +1040,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OJx-0Z-Qcx" kind="relationship" relationship="viewControllers" id="cl4-HP-ayp"/>
-                        <segue destination="oWk-du-c6Y" kind="relationship" relationship="viewControllers" id="8JH-db-XpY"/>
-                        <segue destination="hkk-2a-0pN" kind="relationship" relationship="viewControllers" id="kLJ-4c-frP"/>
-                        <segue destination="SrV-qu-IqW" kind="relationship" relationship="viewControllers" id="Lua-6C-zi1"/>
+                        <segue destination="h9O-nv-By9" kind="relationship" relationship="viewControllers" id="cl4-HP-ayp"/>
+                        <segue destination="jwm-Rd-97g" kind="relationship" relationship="viewControllers" id="8JH-db-XpY"/>
+                        <segue destination="CJ5-Wb-XiV" kind="relationship" relationship="viewControllers" id="kLJ-4c-frP"/>
+                        <segue destination="kwp-Yp-wDi" kind="relationship" relationship="viewControllers" id="Lua-6C-zi1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4p-fS-VCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1191,48 +1181,91 @@
             </objects>
             <point key="canvasLocation" x="-159" y="131"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8Qh-dJ-UQy">
+        <!--Expenses-->
+        <scene sceneID="Mgh-pu-Kyl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e0F-dG-XCj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jwm-Rd-97g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Expenses" id="TLP-RT-aY3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NUG-Qh-yiq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gdh-ep-hfF">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="eeb-EV-9H1" kind="relationship" relationship="rootViewController" id="kLh-ik-wbM"/>
+                        <segue destination="oWk-du-c6Y" kind="relationship" relationship="rootViewController" id="W1i-1E-GDu"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pq4-X8-0OA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cr5-W6-0w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="-732"/>
+            <point key="canvasLocation" x="2226" y="-76"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="awV-dC-1t5">
+        <!--Incomes-->
+        <scene sceneID="dNo-fi-ohs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="sYv-po-eTf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJ5-Wb-XiV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Incomes" id="e9m-GI-6hh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eRf-9r-7sZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PUK-b3-ii7">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zdx-bf-QED" kind="relationship" relationship="rootViewController" id="Pww-HV-1cN"/>
+                        <segue destination="hkk-2a-0pN" kind="relationship" relationship="rootViewController" id="Io1-Ad-z1I"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vko-OX-gzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZS0-xk-ENz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5554" y="-746"/>
+            <point key="canvasLocation" x="2398.125" y="865.14084507042253"/>
+        </scene>
+        <!--Balance-->
+        <scene sceneID="Woc-2Y-t2z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9O-nv-By9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Balance" id="ppQ-68-nE1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ikv-51-16u">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OJx-0Z-Qcx" kind="relationship" relationship="rootViewController" id="Kmu-R5-kbi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Az8-AY-UiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="-876"/>
+        </scene>
+        <!--B & S -->
+        <scene sceneID="OQR-1a-npD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kwp-Yp-wDi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" id="It9-x0-EAs">
+                        <string key="title">B &amp; S
+</string>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EfU-Yd-NmB">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SrV-qu-IqW" kind="relationship" relationship="rootViewController" id="2W1-PA-rjs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSK-SO-FgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1281" y="865"/>
         </scene>
     </scenes>
     <resources>
         <image name="Personal" width="296" height="126"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lCy-7c-vxe"/>
-        <segue reference="40a-gr-Xfq"/>
+        <segue reference="hfn-ED-WnD"/>
+        <segue reference="M7j-YB-gbx"/>
     </inferredMetricsTieBreakers>
 </document>
