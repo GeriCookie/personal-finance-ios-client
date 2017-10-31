@@ -30,6 +30,7 @@
 		7622E06F1FA7EF6E0030B7E3 /* BalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7622E06E1FA7EF6E0030B7E3 /* BalanceService.swift */; };
 		7626832A1FA8FAE90066F289 /* BaseExpenseIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762683291FA8FAE90066F289 /* BaseExpenseIncomeViewController.swift */; };
 		762991011F98F24D00E005CD /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762991001F98F24D00E005CD /* Income.swift */; };
+		763B2A8B1FA9368C00D6536C /* RoundedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B2A8A1FA9368C00D6536C /* RoundedColorView.swift */; };
 		766A49801FA77C1800B5E82B /* AddBudgetOrSavingsGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A497F1FA77C1800B5E82B /* AddBudgetOrSavingsGoal.swift */; };
 		767D4BB71FA7C42A0042D05C /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D4BB61FA7C42A0042D05C /* BudgetService.swift */; };
 		767D4BBD1FA7C70A0042D05C /* SavingsGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D4BBC1FA7C70A0042D05C /* SavingsGoal.swift */; };
@@ -108,6 +109,7 @@
 		7622E06E1FA7EF6E0030B7E3 /* BalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceService.swift; sourceTree = "<group>"; };
 		762683291FA8FAE90066F289 /* BaseExpenseIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseExpenseIncomeViewController.swift; sourceTree = "<group>"; };
 		762991001F98F24D00E005CD /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		763B2A8A1FA9368C00D6536C /* RoundedColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedColorView.swift; sourceTree = "<group>"; };
 		766A497F1FA77C1800B5E82B /* AddBudgetOrSavingsGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetOrSavingsGoal.swift; sourceTree = "<group>"; };
 		767D4BB61FA7C42A0042D05C /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
 		767D4BBC1FA7C70A0042D05C /* SavingsGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoal.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				768C204C1F977DEF00D4463E /* CategoryCell.swift */,
 				76A039791F9B7D8200AC21E3 /* IncomeCell.swift */,
 				76F3850B1FA62F5B00C487E5 /* ColorCell.swift */,
+				763B2A8A1FA9368C00D6536C /* RoundedColorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				768C204F1F977F2700D4463E /* CategoryService.swift in Sources */,
 				76BF84DE1F9BB98700052013 /* IncomesVC.swift in Sources */,
 				76A0397A1F9B7D8200AC21E3 /* IncomeCell.swift in Sources */,
+				763B2A8B1FA9368C00D6536C /* RoundedColorView.swift in Sources */,
 				76F3850E1FA669D600C487E5 /* UIColor+String.swift in Sources */,
 				76ED66531F924C51009980F1 /* UserService.swift in Sources */,
 				76F3850C1FA62F5B00C487E5 /* ColorCell.swift in Sources */,

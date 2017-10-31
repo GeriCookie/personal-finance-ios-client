@@ -23,6 +23,7 @@ class AddIncomeOrExpenseVC: UIViewController {
     var expenseService: ExpenseService?
     var cacheService: CacheService?
     
+    @IBOutlet weak var categoryButton: RoundedButton!
     @IBOutlet weak var categoryName: UILabel!
 
     @IBOutlet weak var colorView: UIView!
@@ -30,6 +31,7 @@ class AddIncomeOrExpenseVC: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var addButton: RoundedButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         incomeService = IncomeService()
@@ -41,9 +43,10 @@ class AddIncomeOrExpenseVC: UIViewController {
         type = cacheService?.getBalanceType()
         if type == .income {
             self.title = "Add Income"
+            self.addButton.setTitle("Add Income", for: .normal)
         } else if type == .expense {
             self.title = "Add Expense"
-            //navBar.topItem?.title = "Add Expense"
+            self.addButton.setTitle("Add Expense", for: .normal)
         } else {
             self.title = "Add"
         }
@@ -96,6 +99,7 @@ extension AddIncomeOrExpenseVC: CategoryVCDelegate {
         categoryName.text = category.name
         colorView.backgroundColor = UIColor.returnUIColor(components: category.color)
         self.category = category
+        self.categoryButton.setTitle("Change category", for: .normal)
     }
 }
 
