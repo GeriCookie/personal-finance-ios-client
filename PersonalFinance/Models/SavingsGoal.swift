@@ -21,5 +21,8 @@ class SavingsGoal: Codable {
     
     enum CodingKeys: String, CodingKey {
         case endDate = "end_date"
+        case amount
+        case completed
+
     }
 }

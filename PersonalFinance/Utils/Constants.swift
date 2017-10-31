@@ -22,12 +22,12 @@ let INCOMES_BY_DATE_URL = "\(BASE_URL)/api/incomes-by-date"
 let BUDGET_URL = "\(BASE_URL)/api/budget/"
 let SAVINGS_GOAL_URL = "\(BASE_URL)/api/savings-goals/"
 
+let BALANCE_URL = "\(BASE_URL)/api/balance/"
 
 //User defaults
 let TOKEN_KEY = "token"
 let USERNAME_KEY = "username"
 let BALANCE_TYPE_KEY = "balance type"
-
 
 let INCOME_CELL_IDENTIFIER = "IncomeCell"
 
