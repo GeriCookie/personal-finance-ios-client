@@ -28,6 +28,14 @@ class CategoryVC: UIViewController {
         
         service?.loadCategories()
         self.title = "Categories"
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAddCategory))
+        
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func goToAddCategory() {
+        performSegue(withIdentifier: "add category", sender: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
