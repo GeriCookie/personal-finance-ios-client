@@ -25,6 +25,7 @@ class AddBudgetOrSavingsGoal: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var addButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,8 +37,10 @@ class AddBudgetOrSavingsGoal: UIViewController {
         type = cacheService?.getBalanceType()
         if type == .budget {
             self.title = "Add Budget"
+            self.addButton.setTitle("Add Budget", for: .normal)
         } else if type == .savings {
             self.title = "Add Savings goal"
+            self.addButton.setTitle("Add Savings Goal", for: .normal)
         } else {
             self.title = "Add"
         }

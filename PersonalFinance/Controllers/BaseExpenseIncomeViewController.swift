@@ -46,6 +46,11 @@ class BaseExpenseIncomeViewController: UIViewController {
         incomeService?.delegate = self
         
         cacheService = CacheService()
+        if type == .expense {
+            self.title = "Expenses"
+        } else {
+            self.title = "Incomes"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

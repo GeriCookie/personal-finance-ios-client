@@ -34,6 +34,7 @@ class BudgetAndSavingsVC: UIViewController {
         budgetService?.delegate = self
         savingsGoalService = SavingsGoalService()
         savingsGoalService?.delegate = self
+        self.title = "Budget and Savings Goal"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,8 +64,8 @@ class BudgetAndSavingsVC: UIViewController {
             DispatchQueue.main.async {
                 self.budgetEndDateLabel.text = budget.endDate
                 self.budgetAmountLabel.text = budget.amount
-//                self.budgetCompletedSegment.isOn = budget.completed
-                self.budgetCompletedSegment.isOn = true
+                self.budgetCompletedSegment.isOn = budget.completed
+               
             }
         }
             
