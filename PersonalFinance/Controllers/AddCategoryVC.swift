@@ -17,6 +17,7 @@ class AddCategoryVC: UIViewController {
     
     var categoryService: CategoryService?
     
+    @IBOutlet weak var categoryButton: RoundedButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryService = CategoryService()
@@ -51,8 +52,11 @@ class AddCategoryVC: UIViewController {
 
 extension AddCategoryVC : CategoryServiceDelegate {
     func didPostCategoriesSuccess() {
-        print("Category posted")
-        self.dismiss(animated: true, completion: nil)
+        let msg = "Category added"
+        showSuccess(with: msg)
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
@@ -60,6 +64,7 @@ extension AddCategoryVC: ChooseColorVCDelegate {
     func didChooseColor(color: UIColor) {
         self.color = color
         self.colorView.backgroundColor = color
+        self.categoryButton.setTitle("Change Color", for: .normal)
     }
 }
 

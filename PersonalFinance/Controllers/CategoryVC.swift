@@ -41,6 +41,11 @@ class CategoryVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         service?.loadCategories()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        service?.loadCategories()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,7 +84,6 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         let category = categories[indexPath.row]
         delegate?.didSelectCategory(category)
         self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
     }
 }
 

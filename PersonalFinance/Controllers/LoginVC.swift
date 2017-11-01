@@ -52,10 +52,7 @@ class LoginVC: UIViewController {
 extension LoginVC: UserServiceDelegate {
     func didRegisterSuccess() {
         self.dismiss(animated: true, completion: nil)
-        DispatchQueue.main.async {
-            (UIApplication.shared.delegate as? AppDelegate)?
-                .showBalanceScreen()
-        }
+        
     }
     
     

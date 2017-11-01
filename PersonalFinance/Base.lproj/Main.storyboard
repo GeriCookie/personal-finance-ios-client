@@ -1039,6 +1039,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qZG-k5-q8w" id="aPh-Qc-Cnl"/>
+                        <segue destination="ai5-MD-i7B" kind="show" identifier="add category" id="OuX-wQ-R7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNz-xy-Vub" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1053,39 +1054,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Yv-wW-YIg">
-                                <rect key="frame" x="89" y="140" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-h4-J72">
-                                <rect key="frame" x="113" y="318" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-h4-J72" customClass="RoundedButton" customModule="PersonalFinance" customModuleProvider="target">
+                                <rect key="frame" x="20" y="304" width="280" height="40"/>
+                                <color key="backgroundColor" white="0.94064670139999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nam-Op-oG1"/>
+                                </constraints>
+                                <state key="normal" title="Add Category">
+                                    <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onAddCategoryClicked:" destination="ai5-MD-i7B" eventType="touchUpInside" id="rNs-q3-qsq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWN-Gz-jnI">
-                                <rect key="frame" x="81" y="280" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose Color"/>
-                                <connections>
-                                    <segue destination="C47-jd-zop" kind="show" identifier="chooseColor" id="F2l-Hi-bKF"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsW-c1-BH9">
-                                <rect key="frame" x="101" y="188" width="55" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TPm-fg-LxM">
+                                <rect key="frame" x="20" y="144" width="280" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-Aq-Rsj">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Yv-wW-YIg">
+                                        <rect key="frame" x="137" y="0.0" width="143" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lUI-dK-1SJ">
+                                <rect key="frame" x="20" y="204" width="280" height="30"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsW-c1-BH9" customClass="RoundedColorView" customModule="PersonalFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3hs-7s-xlQ"/>
+                                            <constraint firstAttribute="width" constant="30" id="A4o-V2-d0i"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWN-Gz-jnI" customClass="RoundedButton" customModule="PersonalFinance" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="0.0" width="150" height="30"/>
+                                        <color key="backgroundColor" white="0.94064670139999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="AJt-X0-fw8"/>
+                                            <constraint firstAttribute="height" constant="30" id="GUx-93-LPk"/>
+                                        </constraints>
+                                        <state key="normal" title="Choose Color">
+                                            <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="C47-jd-zop" kind="show" identifier="chooseColor" id="F2l-Hi-bKF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TPm-fg-LxM" firstAttribute="centerX" secondItem="1FG-C8-Tcj" secondAttribute="centerX" id="1AR-0c-X77"/>
+                            <constraint firstItem="QzE-h4-J72" firstAttribute="centerX" secondItem="1FG-C8-Tcj" secondAttribute="centerX" id="4UG-j1-pmS"/>
+                            <constraint firstItem="TPm-fg-LxM" firstAttribute="top" secondItem="dkE-KR-d62" secondAttribute="top" constant="80" id="5Yu-in-qdX"/>
+                            <constraint firstItem="lUI-dK-1SJ" firstAttribute="leading" secondItem="dkE-KR-d62" secondAttribute="leading" constant="20" id="QQu-UB-Ki2"/>
+                            <constraint firstItem="dkE-KR-d62" firstAttribute="trailing" secondItem="QzE-h4-J72" secondAttribute="trailing" constant="20" id="Tks-lR-XJu"/>
+                            <constraint firstItem="QzE-h4-J72" firstAttribute="top" secondItem="lUI-dK-1SJ" secondAttribute="bottom" constant="70" id="Xr2-je-zYx"/>
+                            <constraint firstItem="QzE-h4-J72" firstAttribute="leading" secondItem="dkE-KR-d62" secondAttribute="leading" constant="20" id="ZA3-aH-5zH"/>
+                            <constraint firstItem="TPm-fg-LxM" firstAttribute="leading" secondItem="dkE-KR-d62" secondAttribute="leading" constant="20" id="b8T-a4-xQG"/>
+                            <constraint firstItem="lUI-dK-1SJ" firstAttribute="centerX" secondItem="1FG-C8-Tcj" secondAttribute="centerX" id="gBH-wF-Evb"/>
+                            <constraint firstItem="dkE-KR-d62" firstAttribute="trailing" secondItem="lUI-dK-1SJ" secondAttribute="trailing" constant="20" id="j7s-VS-SRW"/>
+                            <constraint firstItem="dkE-KR-d62" firstAttribute="trailing" secondItem="TPm-fg-LxM" secondAttribute="trailing" constant="20" id="ji4-S9-qRK"/>
+                            <constraint firstItem="lUI-dK-1SJ" firstAttribute="top" secondItem="TPm-fg-LxM" secondAttribute="bottom" constant="30" id="qvx-Qe-FQ7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dkE-KR-d62"/>
                     </view>
                     <connections>
+                        <outlet property="categoryButton" destination="gWN-Gz-jnI" id="Oy6-1y-PIZ"/>
                         <outlet property="colorView" destination="bsW-c1-BH9" id="yy3-Ef-kXI"/>
                         <outlet property="nameField" destination="8Yv-wW-YIg" id="lGy-ma-GZt"/>
                     </connections>
@@ -1103,7 +1163,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IKv-hf-VQP">
-                                <rect key="frame" x="0.0" y="40" width="320" height="528"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uns-hW-IUg">
                                     <size key="itemSize" width="50" height="50"/>
