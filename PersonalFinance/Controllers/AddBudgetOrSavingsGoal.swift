@@ -44,6 +44,7 @@ class AddBudgetOrSavingsGoal: UIViewController {
         } else {
             self.title = "Add"
         }
+        setupView()
     }
     
     @IBAction func datePickerAction(_ sender: UIDatePicker) {
@@ -78,6 +79,16 @@ class AddBudgetOrSavingsGoal: UIViewController {
                 savingsGoalService?.addSavingsGoal(withAmount: amountValue, andEndDate: date)
             }
         }
+    }
+    
+    func setupView() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
 }
 

@@ -50,6 +50,7 @@ class AddIncomeOrExpenseVC: UIViewController {
         } else {
             self.title = "Add"
         }
+        setupView()
     }
     
     @IBAction func onAddClicked(_ sender: UIButton) {
@@ -91,6 +92,16 @@ class AddIncomeOrExpenseVC: UIViewController {
             
             categoryVC.delegate = self
         }
+    }
+    
+    func setupView() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
 }
 

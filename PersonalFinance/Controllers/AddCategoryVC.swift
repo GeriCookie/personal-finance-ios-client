@@ -23,6 +23,7 @@ class AddCategoryVC: UIViewController {
         categoryService = CategoryService()
         categoryService?.delegate = self
         self.title = "Add Category"
+        setupView()
         // Do any additional setup after loading the view.
     }
 
@@ -47,6 +48,16 @@ class AddCategoryVC: UIViewController {
                 nextVC.delegate = self
             }
         }
+    }
+    
+    func setupView() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
 }
 
