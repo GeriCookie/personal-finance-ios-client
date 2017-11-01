@@ -34,7 +34,7 @@ class BudgetAndSavingsVC: UIViewController {
         budgetService?.delegate = self
         savingsGoalService = SavingsGoalService()
         savingsGoalService?.delegate = self
-        self.title = "Budget and Savings Goal"
+        self.title = "Budget & Savings"
     }
     
     override func viewDidAppear(_ animated: Bool) {
